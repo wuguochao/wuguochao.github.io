@@ -89,10 +89,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>背景：<br>项目需要自动批处理大量图片，windows bash唯一可选项。</p>
-<p>@echo off 消除盘符<br>set /a var = 1+2<br>echo %var%</p>
-<p>“&gt; &gt;&gt;”输出 “&lt; &lt;&lt;”输入 文件流的方向”</p>
-<p>多命令执行<br>&amp;&amp; 命令错误则不继续执行下一条命令<br>|| 无视命令错误与否继续执行下一条命令</p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off 消除盘符</span><br><span class="line">set &#x2F;a var &#x3D; 1+2</span><br><span class="line">echo %var%</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;&gt; &gt;&gt;&quot;输出 &quot;&lt; &lt;&lt;&quot;输入 文件流的方向&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="多命令执行"><a href="#多命令执行" class="headerlink" title="多命令执行"></a>多命令执行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp; 命令错误则不继续执行下一条命令</span><br><span class="line">|| 无视命令错误与否继续执行下一条命令</span><br></pre></td></tr></table></figure>
+<h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dir | find &quot;.txt&quot;</span><br><span class="line">netstat -an | find &quot;ESTABLISHED&quot;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
