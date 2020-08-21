@@ -92,7 +92,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>以下设计思路可以用于类传奇，也可以用于部分arpg</p>
+<h3 id="数据表的设计"><a href="#数据表的设计" class="headerlink" title="数据表的设计"></a>数据表的设计</h3><p>考虑到此种类型游戏技能比较复杂，一个技能可能分数种阶段（项目是6种）带数种特效，产生数种后继状态。技能和buf需要分开，两者的特效也要分开。初步设计为5张表处理技能。skillData处理技能数据skilleffect处理特效数据，一条skillData数据可以与薯条skilleffect信息关联。BufferData处理buffer，Buffereffect处理buf特效。一条skilldata可以与数条buf关联。</p>
+<ul>
+<li>skilldata</li>
+<li>skilleffect</li>
+<li>bufferdata</li>
+<li>buffereffect</li>
+</ul>
+<h3 id="资源的处理"><a href="#资源的处理" class="headerlink" title="资源的处理"></a>资源的处理</h3><p>原则如下：</p>
+<ul>
+<li>图像资源用10位数字分类区别类型2，id3，动作2，方向1和帧数，如有必要i可以增加位数</li>
+<li>单方向技能每个方向分开合图，8方向分为8个文件，需要时再加载</li>
+<li>多方向技能合并成一个文件，利于合批降低drawcall</li>
+<li>资源管理器设置技能资源子管理器，子管理器中分数个管道，分别处理不同资源。主角技能资源优先缓存，低等级常用公用资源缓存，其他角色技能资源换场景随即清理。</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
