@@ -10,7 +10,7 @@
   <meta name="description" content="概述以下设计思路可以用于类传奇，也可以用于部分arpg 数据表的设计考虑到此种类型游戏技能比较复杂，一个技能可能分数种阶段（项目是6种）带数种特效，产生数种后继状态。技能和buf需要分开，两者的特效也要分开。初步设计为5张表处理技能。skillData处理技能数据skilleffect处理特效数据，一条skillData数据可以与薯条skilleffect信息关联。BufferData处理buff">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cocos2d-xARPG前端技能系统设计">
-<meta property="og:url" content="http://wuguochao.github.io/2020/08/21/2dARPG%E5%BC%80%E5%8F%91/%E2%80%9Ccocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%80%9D/index.html">
+<meta property="og:url" content="http://wuguochao.github.io/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/%E2%80%9Ccocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%80%9D/index.html">
 <meta property="og:site_name" content="-.-.--- -.. .   .-.">
 <meta property="og:description" content="概述以下设计思路可以用于类传奇，也可以用于部分arpg 数据表的设计考虑到此种类型游戏技能比较复杂，一个技能可能分数种阶段（项目是6种）带数种特效，产生数种后继状态。技能和buf需要分开，两者的特效也要分开。初步设计为5张表处理技能。skillData处理技能数据skilleffect处理特效数据，一条skillData数据可以与薯条skilleffect信息关联。BufferData处理buff">
 <meta property="og:locale" content="en_US">
@@ -67,9 +67,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2dARPG开发/“cocos2d-xARPG前端技能系统设计”" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2D ARPG开发/“cocos2d-xARPG前端技能系统设计”" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/21/2dARPG%E5%BC%80%E5%8F%91/%E2%80%9Ccocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%80%9D/" class="article-date">
+    <a href="/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/%E2%80%9Ccocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%80%9D/" class="article-date">
   <time datetime="2020-08-21T11:33:56.000Z" itemprop="datePublished">2020-08-21</time>
 </a>
     
@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2020/08/21/2dARPG%E5%BC%80%E5%8F%91/%E2%80%9Ccocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%80%9D/" data-id="cke9rhr66000321nrbu0b1mnn" class="article-share-link">Share</a>
+      <a data-url="http://wuguochao.github.io/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/%E2%80%9Ccocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%80%9D/" data-id="ckea2w3a700060pnr9g34hh8f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a></li></ul>
@@ -123,7 +123,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/08/25/2dARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/25/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -133,7 +133,7 @@
     </a>
   
   
-    <a href="/2020/08/21/2dARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E9%A1%B9%E7%9B%AE%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E9%A1%B9%E7%9B%AE%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">cocos2d-xARPG项目趟坑笔记</div>
     </a>
@@ -151,7 +151,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">小游戏开发</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">小游戏开发</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -161,7 +161,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -171,7 +171,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a>
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
     </div>
   </div>
 
@@ -180,7 +180,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -193,23 +193,23 @@
       <ul>
         
           <li>
-            <a href="/2020/08/25/2dARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/">cocos2d-xARPG drawcall优化</a>
+            <a href="/2020/08/25/3D%20MMO%E5%BC%80%E5%8F%91/Unity%203D%20MMO%E5%9B%9E%E9%A1%BE/">Unity MMO整体架构概述</a>
           </li>
         
           <li>
-            <a href="/2020/08/21/2dARPG%E5%BC%80%E5%8F%91/%E2%80%9Ccocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%80%9D/">cocos2d-xARPG前端技能系统设计</a>
+            <a href="/2020/08/25/3D%20MMO%E5%BC%80%E5%8F%91/Unity%20MMO%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0/">Unity MMO整体架构概述</a>
           </li>
         
           <li>
-            <a href="/2020/08/21/2dARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E9%A1%B9%E7%9B%AE%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/">cocos2d-xARPG项目趟坑笔记</a>
+            <a href="/2020/08/25/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/">cocos2d-xARPG drawcall优化</a>
           </li>
         
           <li>
-            <a href="/2020/08/17/windows/windows-bash%E6%8C%87%E4%BB%A4/">windows bash指令</a>
+            <a href="/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/%E2%80%9Ccocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E2%80%9D/">cocos2d-xARPG前端技能系统设计</a>
           </li>
         
           <li>
-            <a href="/2020/08/17/creator/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/">微信小游戏开发趟坑笔记</a>
+            <a href="/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E9%A1%B9%E7%9B%AE%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/">cocos2d-xARPG项目趟坑笔记</a>
           </li>
         
       </ul>
