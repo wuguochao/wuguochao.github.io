@@ -66,6 +66,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-cocos2d-x/android出包c++常见问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2020-08-29T01:52:25.000Z" itemprop="datePublished">2020-08-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cocos2d-x/">cocos2d-x</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">android出包c++常见问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="常见编译错误"><a href="#常见编译错误" class="headerlink" title="常见编译错误"></a>常见编译错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">itoa()</span><br><span class="line">_i64toa()</span><br></pre></td></tr></table></figure>
+<p>函数ndk默认无法辨认，最好不使用这种函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INT64</span><br></pre></td></tr></table></figure>
+<p>是windows下的long long，ndk无法辨认</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="ckef0kby30000ktnr78mkg8w7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pc游戏逆向/pc逆向的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/27/pc%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/pc%E9%80%86%E5%90%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
@@ -95,6 +141,10 @@
         <h3 id="DLL文件"><a href="#DLL文件" class="headerlink" title="DLL文件"></a>DLL文件</h3><ul>
 <li>dynamics link lib 动态连接库，可以认为是程序的基本功能包。360，火绒剑都可以查看进程和调用的DLL。</li>
 <li>感染共享的DLL 获取其他软件的权限</li>
+<li>DLL 本质上是一个代码库，程序需要时候加载不需要不加载windows以这种方式节省程序的内存占用。<h3 id="常用的语言和工具"><a href="#常用的语言和工具" class="headerlink" title="常用的语言和工具"></a>常用的语言和工具</h3></li>
+<li>winshark</li>
+<li>c++ vs2017</li>
+<li>易语言<h3 id="安全术语"><a href="#安全术语" class="headerlink" title="安全术语"></a>安全术语</h3>r0-r3,r0是系统 r3是应用</li>
 </ul>
 
       
@@ -136,7 +186,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="初始环境搭建"><a href="#初始环境搭建" class="headerlink" title="初始环境搭建"></a>初始环境搭建</h3><ul>
+        <h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><p>出包时先把资源移除，打包比较快。等确认打包没有问题后再把资源添加进来。</p>
+<h3 id="初始环境搭建"><a href="#初始环境搭建" class="headerlink" title="初始环境搭建"></a>初始环境搭建</h3><ul>
 <li>svn/git</li>
 <li>安装java8 安装android studio，设置代理为国内镜像。</li>
 <li>安装python 2.7 cocos2d-x 3.17.2 sdk-24 ndk-r20b 设置cocos的setup.py</li>
@@ -483,6 +534,9 @@
 <h3 id="打印可选参数"><a href="#打印可选参数" class="headerlink" title="打印可选参数"></a>打印可选参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo %1 %2</span><br><span class="line">xxx.bat param1 param2</span><br><span class="line">结果 param1 param2</span><br></pre></td></tr></table></figure>
 <h3 id="bash的注释"><a href="#bash的注释" class="headerlink" title="bash的注释"></a>bash的注释</h3><p>关键字 rem<br>使用方式 rem 内容</p>
 <h3 id="修改文字颜色和标题栏命令"><a href="#修改文字颜色和标题栏命令" class="headerlink" title="修改文字颜色和标题栏命令"></a>修改文字颜色和标题栏命令</h3><p>color 内容<br>title 内容</p>
+<h3 id="时间命令"><a href="#时间命令" class="headerlink" title="时间命令"></a>时间命令</h3><p>无参数会显示当前时间并提示修改新时间，/t只会显示当前时间<br>date 日期<br>time 时间</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>start</p>
+<h3 id="调用其它bat"><a href="#调用其它bat" class="headerlink" title="调用其它bat"></a>调用其它bat</h3><p>call bat文件的路径<br>注意 call 无法执行bat参数</p>
 
       
     </div>
@@ -612,7 +666,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos-creator/">cocos creator</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos2d-x/">cocos2d-x</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pc%E9%80%86%E5%90%91/">pc逆向</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos-creator/">cocos creator</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos2d-x/">cocos2d-x</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pc%E9%80%86%E5%90%91/">pc逆向</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -622,7 +676,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -632,7 +686,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 10px;">cocos2d-x apk出包</a> <a href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">cocos2d-x 基础</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 20px;">cocos2d-x apk出包</a> <a href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">cocos2d-x 基础</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
     </div>
   </div>
 
@@ -641,7 +695,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -652,6 +706,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">android出包c++常见问题</a>
+          </li>
         
           <li>
             <a href="/2020/08/27/pc%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/pc%E9%80%86%E5%90%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">pc逆向的基本概念</a>
@@ -667,10 +725,6 @@
         
           <li>
             <a href="/2020/08/25/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/">cocos2d-xARPG drawcall优化</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">cocos2d-xARPG前端技能系统设计</a>
           </li>
         
       </ul>

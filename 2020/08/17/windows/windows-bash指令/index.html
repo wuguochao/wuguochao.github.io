@@ -15,7 +15,7 @@
 <meta property="og:description" content="背景：项目需要自动批处理大量图片，windows bash唯一可选项。 变量设置123@echo off 消除盘符set &#x2F;a var &#x3D; 1+2echo %var% 文件流1&quot;&gt; &gt;&gt;&quot;输出 &quot;&lt; &lt;&lt;&quot;输入 文件流的方向&quot; 多命令执行12&amp;&amp; 命令错误则不继续执行下一条命令">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-17T07:56:30.000Z">
-<meta property="article:modified_time" content="2020-08-27T06:26:08.000Z">
+<meta property="article:modified_time" content="2020-08-28T03:58:02.000Z">
 <meta property="article:author" content="Wu GuoChao">
 <meta property="article:tag" content="bash">
 <meta name="twitter:card" content="summary">
@@ -102,6 +102,9 @@
 <h3 id="打印可选参数"><a href="#打印可选参数" class="headerlink" title="打印可选参数"></a>打印可选参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo %1 %2</span><br><span class="line">xxx.bat param1 param2</span><br><span class="line">结果 param1 param2</span><br></pre></td></tr></table></figure>
 <h3 id="bash的注释"><a href="#bash的注释" class="headerlink" title="bash的注释"></a>bash的注释</h3><p>关键字 rem<br>使用方式 rem 内容</p>
 <h3 id="修改文字颜色和标题栏命令"><a href="#修改文字颜色和标题栏命令" class="headerlink" title="修改文字颜色和标题栏命令"></a>修改文字颜色和标题栏命令</h3><p>color 内容<br>title 内容</p>
+<h3 id="时间命令"><a href="#时间命令" class="headerlink" title="时间命令"></a>时间命令</h3><p>无参数会显示当前时间并提示修改新时间，/t只会显示当前时间<br>date 日期<br>time 时间</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>start</p>
+<h3 id="调用其它bat"><a href="#调用其它bat" class="headerlink" title="调用其它bat"></a>调用其它bat</h3><p>call bat文件的路径<br>注意 call 无法执行bat参数</p>
 
       
     </div>
@@ -145,7 +148,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos-creator/">cocos creator</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos2d-x/">cocos2d-x</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pc%E9%80%86%E5%90%91/">pc逆向</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos-creator/">cocos creator</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos2d-x/">cocos2d-x</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pc%E9%80%86%E5%90%91/">pc逆向</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -155,7 +158,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -165,7 +168,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 10px;">cocos2d-x apk出包</a> <a href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">cocos2d-x 基础</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 20px;">cocos2d-x apk出包</a> <a href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">cocos2d-x 基础</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
     </div>
   </div>
 
@@ -174,7 +177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -185,6 +188,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">android出包c++常见问题</a>
+          </li>
         
           <li>
             <a href="/2020/08/27/pc%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/pc%E9%80%86%E5%90%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">pc逆向的基本概念</a>
@@ -200,10 +207,6 @@
         
           <li>
             <a href="/2020/08/25/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/">cocos2d-xARPG drawcall优化</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">cocos2d-xARPG前端技能系统设计</a>
           </li>
         
       </ul>
