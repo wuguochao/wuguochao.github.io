@@ -7,15 +7,15 @@
   
   <title>android出包c++常见问题 | -.-.--- -.. .   .-.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常见编译错误12itoa()_i64toa() 函数ndk默认无法辨认，最好不使用这种函数。 1INT64 是windows下的long long，ndk无法辨认">
+  <meta name="description" content="常见编译错误12itoa()_i64toa() 函数ndk默认无法辨认，最好不使用这种函数。 1INT64 是windows下的long long，ndk无法辨认 默认目录和可写目录的错误  cocos2d-x FileUtils有两个函数 fullpathforfilename（）找的是包内目录，而getWritablePath（）是可写目录如果没有权限则会报错">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android出包c++常见问题">
 <meta property="og:url" content="http://wuguochao.github.io/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="-.-.--- -.. .   .-.">
-<meta property="og:description" content="常见编译错误12itoa()_i64toa() 函数ndk默认无法辨认，最好不使用这种函数。 1INT64 是windows下的long long，ndk无法辨认">
+<meta property="og:description" content="常见编译错误12itoa()_i64toa() 函数ndk默认无法辨认，最好不使用这种函数。 1INT64 是windows下的long long，ndk无法辨认 默认目录和可写目录的错误  cocos2d-x FileUtils有两个函数 fullpathforfilename（）找的是包内目录，而getWritablePath（）是可写目录如果没有权限则会报错">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-29T01:52:25.000Z">
-<meta property="article:modified_time" content="2020-08-29T01:55:10.000Z">
+<meta property="article:modified_time" content="2020-08-29T09:54:03.000Z">
 <meta property="article:author" content="Wu GuoChao">
 <meta property="article:tag" content="cocos2d-x apk出包">
 <meta name="twitter:card" content="summary">
@@ -97,6 +97,10 @@
 <p>函数ndk默认无法辨认，最好不使用这种函数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INT64</span><br></pre></td></tr></table></figure>
 <p>是windows下的long long，ndk无法辨认</p>
+<p>默认目录和可写目录的错误</p>
+<ul>
+<li>cocos2d-x FileUtils有两个函数 fullpathforfilename（）找的是包内目录，而getWritablePath（）是可写目录<br>如果没有权限则会报错</li>
+</ul>
 
       
     </div>

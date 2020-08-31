@@ -96,6 +96,10 @@
 <p>函数ndk默认无法辨认，最好不使用这种函数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INT64</span><br></pre></td></tr></table></figure>
 <p>是windows下的long long，ndk无法辨认</p>
+<p>默认目录和可写目录的错误</p>
+<ul>
+<li>cocos2d-x FileUtils有两个函数 fullpathforfilename（）找的是包内目录，而getWritablePath（）是可写目录<br>如果没有权限则会报错</li>
+</ul>
 
       
     </div>
@@ -483,6 +487,10 @@
 <li>人物资源同1，另外由逆时针改为顺时针</li>
 <li>drawcall 非常高，地图上召唤10个怪已经高达200，必须处理。</li>
 </ul>
+<h2 id="自定义目录和默认资源目录的问题处理"><a href="#自定义目录和默认资源目录的问题处理" class="headerlink" title="自定义目录和默认资源目录的问题处理"></a>自定义目录和默认资源目录的问题处理</h2><ul>
+<li>现阶段目录规则过于繁琐，demo版本统一一个目录管理</li>
+<li>因为数据库文件需要root权限，数据库必须copy到可写目录然后才能读取</li>
+</ul>
 
       
     </div>
@@ -535,8 +543,10 @@
 <h3 id="bash的注释"><a href="#bash的注释" class="headerlink" title="bash的注释"></a>bash的注释</h3><p>关键字 rem<br>使用方式 rem 内容</p>
 <h3 id="修改文字颜色和标题栏命令"><a href="#修改文字颜色和标题栏命令" class="headerlink" title="修改文字颜色和标题栏命令"></a>修改文字颜色和标题栏命令</h3><p>color 内容<br>title 内容</p>
 <h3 id="时间命令"><a href="#时间命令" class="headerlink" title="时间命令"></a>时间命令</h3><p>无参数会显示当前时间并提示修改新时间，/t只会显示当前时间<br>date 日期<br>time 时间</p>
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>start</p>
+<h3 id="启动新窗口执行程序"><a href="#启动新窗口执行程序" class="headerlink" title="启动新窗口执行程序"></a>启动新窗口执行程序</h3><p>start</p>
 <h3 id="调用其它bat"><a href="#调用其它bat" class="headerlink" title="调用其它bat"></a>调用其它bat</h3><p>call bat文件的路径<br>注意 call 无法执行bat参数</p>
+<h3 id="查看进程列表tasklist"><a href="#查看进程列表tasklist" class="headerlink" title="查看进程列表tasklist"></a>查看进程列表tasklist</h3><p>tasklist /s 远程机器ip /u 用户名 /p 密码</p>
+<h3 id="终止进程taskkill"><a href="#终止进程taskkill" class="headerlink" title="终止进程taskkill"></a>终止进程taskkill</h3><p>taskkill /im cmd.exe<br>taskkill /pid pidnum /t 关闭pidnum 以及所有的子项</p>
 
       
     </div>
