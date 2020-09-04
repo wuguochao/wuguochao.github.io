@@ -7,15 +7,15 @@
   
   <title>pc逆向的基本概念 | -.-.--- -.. .   .-.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DLL文件 dynamics link lib 动态连接库，可以认为是程序的基本功能包。360，火绒剑都可以查看进程和调用的DLL。 感染共享的DLL 获取其他软件的权限 DLL 本质上是一个代码库，程序需要时候加载不需要不加载windows以这种方式节省程序的内存占用。常用的语言和工具 winshark c++ vs2017 易语言安全术语r0-r3,r0是系统 r3是应用">
+  <meta name="description" content="DLL文件 dynamics link lib 动态连接库，可以认为是程序的基本功能包。360，火绒剑都可以查看进程和调用的DLL。 感染共享的DLL 获取其他软件的权限 DLL 本质上是一个代码库，程序需要时候加载不需要不加载windows以这种方式节省程序的内存占用。常用的语言和工具 winshark c++ vs2017 易语言安全术语 r0-r3,r0是系统 r3是应用windows系统相">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pc逆向的基本概念">
 <meta property="og:url" content="http://wuguochao.github.io/2020/08/27/pc%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91/pc%E9%80%86%E5%90%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="-.-.--- -.. .   .-.">
-<meta property="og:description" content="DLL文件 dynamics link lib 动态连接库，可以认为是程序的基本功能包。360，火绒剑都可以查看进程和调用的DLL。 感染共享的DLL 获取其他软件的权限 DLL 本质上是一个代码库，程序需要时候加载不需要不加载windows以这种方式节省程序的内存占用。常用的语言和工具 winshark c++ vs2017 易语言安全术语r0-r3,r0是系统 r3是应用">
+<meta property="og:description" content="DLL文件 dynamics link lib 动态连接库，可以认为是程序的基本功能包。360，火绒剑都可以查看进程和调用的DLL。 感染共享的DLL 获取其他软件的权限 DLL 本质上是一个代码库，程序需要时候加载不需要不加载windows以这种方式节省程序的内存占用。常用的语言和工具 winshark c++ vs2017 易语言安全术语 r0-r3,r0是系统 r3是应用windows系统相">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-27T12:46:28.000Z">
-<meta property="article:modified_time" content="2020-08-28T10:57:13.000Z">
+<meta property="article:modified_time" content="2020-09-01T03:50:44.000Z">
 <meta property="article:author" content="Wu GuoChao">
 <meta name="twitter:card" content="summary">
   
@@ -98,7 +98,11 @@
 <li>DLL 本质上是一个代码库，程序需要时候加载不需要不加载windows以这种方式节省程序的内存占用。<h3 id="常用的语言和工具"><a href="#常用的语言和工具" class="headerlink" title="常用的语言和工具"></a>常用的语言和工具</h3></li>
 <li>winshark</li>
 <li>c++ vs2017</li>
-<li>易语言<h3 id="安全术语"><a href="#安全术语" class="headerlink" title="安全术语"></a>安全术语</h3>r0-r3,r0是系统 r3是应用</li>
+<li>易语言<h3 id="安全术语"><a href="#安全术语" class="headerlink" title="安全术语"></a>安全术语</h3></li>
+<li>r0-r3,r0是系统 r3是应用<h3 id="windows系统相关"><a href="#windows系统相关" class="headerlink" title="windows系统相关"></a>windows系统相关</h3></li>
+<li>windows系统是一个服务中心集合。</li>
+<li>API is app programming interface for short。</li>
+<li>应用层基本使用win32的API，r0级别会使用win64的API</li>
 </ul>
 
       
@@ -141,7 +145,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos-creator/">cocos creator</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos2d-x/">cocos2d-x</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pc%E9%80%86%E5%90%91/">pc逆向</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos-creator/">cocos creator</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos2d-x/">cocos2d-x</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pc%E9%80%86%E5%90%91/">pc逆向</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E7%AB%AF/">服务器后端</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -151,7 +155,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -161,7 +165,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 20px;">cocos2d-x apk出包</a> <a href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">cocos2d-x 基础</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 15px;">cocos2d-x apk出包</a> <a href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">cocos2d-x 基础</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
     </div>
   </div>
 
@@ -170,7 +174,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -181,6 +185,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/09/04/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/cpython2/python%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/">python服务器基础</a>
+          </li>
         
           <li>
             <a href="/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">android出包c++常见问题</a>
@@ -196,10 +204,6 @@
         
           <li>
             <a href="/2020/08/25/3D%20MMO%E5%BC%80%E5%8F%91/Unity%203D%20MMO%E5%9B%9E%E9%A1%BE/">Unity MMO整体架构概述</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/25/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/">cocos2d-xARPG drawcall优化</a>
           </li>
         
       </ul>

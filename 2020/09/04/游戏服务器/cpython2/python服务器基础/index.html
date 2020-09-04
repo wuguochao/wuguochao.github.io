@@ -5,19 +5,19 @@
   
 
   
-  <title>cocos2d-xARPG前端技能系统设计 | -.-.--- -.. .   .-.</title>
+  <title>python服务器基础 | -.-.--- -.. .   .-.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概述以下设计思路可以用于类传奇，也可以用于部分arpg 数据表的设计考虑到此种类型游戏技能比较复杂，一个技能可能分数种阶段（项目是6种）带数种特效，产生数种后继状态。技能和buf需要分开，两者的特效也要分开。初步设计为5张表处理技能。skillData处理技能数据skilleffect处理特效数据，一条skillData数据可以与薯条skilleffect信息关联。BufferData处理buff">
+  <meta name="description" content="just a programmer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cocos2d-xARPG前端技能系统设计">
-<meta property="og:url" content="http://wuguochao.github.io/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:title" content="python服务器基础">
+<meta property="og:url" content="http://wuguochao.github.io/2020/09/04/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/cpython2/python%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="-.-.--- -.. .   .-.">
-<meta property="og:description" content="概述以下设计思路可以用于类传奇，也可以用于部分arpg 数据表的设计考虑到此种类型游戏技能比较复杂，一个技能可能分数种阶段（项目是6种）带数种特效，产生数种后继状态。技能和buf需要分开，两者的特效也要分开。初步设计为5张表处理技能。skillData处理技能数据skilleffect处理特效数据，一条skillData数据可以与薯条skilleffect信息关联。BufferData处理buff">
+<meta property="og:description" content="just a programmer">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-21T11:33:56.000Z">
-<meta property="article:modified_time" content="2020-08-26T03:43:16.000Z">
+<meta property="article:published_time" content="2020-09-04T13:39:20.000Z">
+<meta property="article:modified_time" content="2020-09-04T13:40:27.000Z">
 <meta property="article:author" content="Wu GuoChao">
-<meta property="article:tag" content="游戏系统">
+<meta property="article:tag" content="游戏开发">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="-.-.--- -.. .   .-." type="application/atom+xml">
@@ -67,14 +67,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2D ARPG开发/cocos2d-xARPG前端技能系统设计" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-游戏服务器/cpython2/python服务器基础" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="article-date">
-  <time datetime="2020-08-21T11:33:56.000Z" itemprop="datePublished">2020-08-21</time>
+    <a href="/2020/09/04/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/cpython2/python%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2020-09-04T13:39:20.000Z" itemprop="datePublished">2020-09-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a>
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E7%AB%AF/">服务器后端</a>
   </div>
 
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      cocos2d-xARPG前端技能系统设计
+      python服务器基础
     </h1>
   
 
@@ -93,30 +93,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>以下设计思路可以用于类传奇，也可以用于部分arpg</p>
-<h3 id="数据表的设计"><a href="#数据表的设计" class="headerlink" title="数据表的设计"></a>数据表的设计</h3><p>考虑到此种类型游戏技能比较复杂，一个技能可能分数种阶段（项目是6种）带数种特效，产生数种后继状态。技能和buf需要分开，两者的特效也要分开。初步设计为5张表处理技能。skillData处理技能数据skilleffect处理特效数据，一条skillData数据可以与薯条skilleffect信息关联。BufferData处理buffer，Buffereffect处理buf特效。一条skilldata可以与数条buf关联。</p>
-<ul>
-<li>skilldata</li>
-<li>skilleffect</li>
-<li>bufferdata</li>
-<li>buffereffect</li>
-</ul>
-<h3 id="资源的处理"><a href="#资源的处理" class="headerlink" title="资源的处理"></a>资源的处理</h3><p>原则如下：</p>
-<ul>
-<li>图像资源用10位数字分类区别类型2，id3，动作2，方向1和帧数，如有必要i可以增加位数</li>
-<li>单方向技能每个方向分开合图，8方向分为8个文件，需要时再加载</li>
-<li>多方向技能合并成一个文件，利于合批降低drawcall</li>
-<li>资源管理器设置技能资源子管理器，子管理器中分数个管道，分别处理不同资源。主角技能资源优先缓存，低等级常用公用资源缓存，其他角色技能资源换场景随即清理。</li>
-</ul>
-<h3 id="技能消息的处理"><a href="#技能消息的处理" class="headerlink" title="技能消息的处理"></a>技能消息的处理</h3><p>两种选择，接受消息后处理和发送消息处理。如果接受消息后处理，一旦网络延迟卡顿现象会比较严重；一般技能动画在发出消息时候同时播放，接受回包时候处理技能cd。血量和状态处理由额外的消息去做。</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" data-id="ckecn2pvi00009xnr4rix1yr6" class="article-share-link">Share</a>
+      <a data-url="http://wuguochao.github.io/2020/09/04/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/cpython2/python%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/" data-id="ckeoav2cs000063nr7i4g0kdw" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a></li></ul>
 
     </footer>
   </div>
@@ -124,19 +108,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/08/25/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          cocos2d-xARPG drawcall优化
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/21/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E9%A1%B9%E7%9B%AE%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">cocos2d-xARPG项目趟坑笔记</div>
+      <div class="article-nav-title">android出包c++常见问题</div>
     </a>
   
 </nav>

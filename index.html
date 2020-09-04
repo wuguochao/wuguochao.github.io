@@ -66,6 +66,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-游戏服务器/cpython2/python服务器基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/04/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/cpython2/python%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2020-09-04T13:39:20.000Z" itemprop="datePublished">2020-09-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E7%AB%AF/">服务器后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/04/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/cpython2/python%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/">python服务器基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2020/09/04/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/cpython2/python%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/" data-id="ckeoav2cs000063nr7i4g0kdw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-cocos2d-x/android出包c++常见问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="article-date">
@@ -98,8 +140,10 @@
 <p>是windows下的long long，ndk无法辨认</p>
 <p>默认目录和可写目录的错误</p>
 <ul>
-<li>cocos2d-x FileUtils有两个函数 fullpathforfilename（）找的是包内目录，而getWritablePath（）是可写目录<br>如果没有权限则会报错</li>
+<li>cocos2d-x FileUtils有两个函数 fullpathforfilename（）getDefaultResourceRootPath()找的是包内目录，而getWritablePath（）是可写目录<br>如果没有权限则会报错</li>
 </ul>
+<p>cmakelist文件需要注意大小写问题</p>
+<h3 id="疑问：线程真的能提高程序的性能么。"><a href="#疑问：线程真的能提高程序的性能么。" class="headerlink" title="疑问：线程真的能提高程序的性能么。"></a>疑问：线程真的能提高程序的性能么。</h3><p>多用线程未必是好事。</p>
 
       
     </div>
@@ -148,7 +192,11 @@
 <li>DLL 本质上是一个代码库，程序需要时候加载不需要不加载windows以这种方式节省程序的内存占用。<h3 id="常用的语言和工具"><a href="#常用的语言和工具" class="headerlink" title="常用的语言和工具"></a>常用的语言和工具</h3></li>
 <li>winshark</li>
 <li>c++ vs2017</li>
-<li>易语言<h3 id="安全术语"><a href="#安全术语" class="headerlink" title="安全术语"></a>安全术语</h3>r0-r3,r0是系统 r3是应用</li>
+<li>易语言<h3 id="安全术语"><a href="#安全术语" class="headerlink" title="安全术语"></a>安全术语</h3></li>
+<li>r0-r3,r0是系统 r3是应用<h3 id="windows系统相关"><a href="#windows系统相关" class="headerlink" title="windows系统相关"></a>windows系统相关</h3></li>
+<li>windows系统是一个服务中心集合。</li>
+<li>API is app programming interface for short。</li>
+<li>应用层基本使用win32的API，r0级别会使用win64的API</li>
 </ul>
 
       
@@ -486,6 +534,7 @@
 <li>地图无法使用，需要处理清流程</li>
 <li>人物资源同1，另外由逆时针改为顺时针</li>
 <li>drawcall 非常高，地图上召唤10个怪已经高达200，必须处理。</li>
+<li>游戏功能确实实现，但是代码混乱，没有按程序功能去管理，也没有按游戏功能分模块。是一个非常好的代码优化试验场。</li>
 </ul>
 <h2 id="自定义目录和默认资源目录的问题处理"><a href="#自定义目录和默认资源目录的问题处理" class="headerlink" title="自定义目录和默认资源目录的问题处理"></a>自定义目录和默认资源目录的问题处理</h2><ul>
 <li>现阶段目录规则过于繁琐，demo版本统一一个目录管理</li>
@@ -547,6 +596,12 @@
 <h3 id="调用其它bat"><a href="#调用其它bat" class="headerlink" title="调用其它bat"></a>调用其它bat</h3><p>call bat文件的路径<br>注意 call 无法执行bat参数</p>
 <h3 id="查看进程列表tasklist"><a href="#查看进程列表tasklist" class="headerlink" title="查看进程列表tasklist"></a>查看进程列表tasklist</h3><p>tasklist /s 远程机器ip /u 用户名 /p 密码</p>
 <h3 id="终止进程taskkill"><a href="#终止进程taskkill" class="headerlink" title="终止进程taskkill"></a>终止进程taskkill</h3><p>taskkill /im cmd.exe<br>taskkill /pid pidnum /t 关闭pidnum 以及所有的子项</p>
+<h3 id="目录树指令-tree"><a href="#目录树指令-tree" class="headerlink" title="目录树指令 tree"></a>目录树指令 tree</h3><p>tree /a 不带扩展名<br>tree /f 带扩展名</p>
+<h3 id="关机指令"><a href="#关机指令" class="headerlink" title="关机指令"></a>关机指令</h3><p>shutdown /i 打开GUI界面处理远程关机<br>shutdown /s 关闭<br>shutdown /sg 关闭默认登陆上次登陆用户<br>shutdown /r 重启</p>
+<h3 id="at指令"><a href="#at指令" class="headerlink" title="at指令"></a>at指令</h3><p>现在已经改成schtasks指令</p>
+<h3 id="查看环境变量"><a href="#查看环境变量" class="headerlink" title="查看环境变量"></a>查看环境变量</h3><p>set<br>echo %变量% 打印变量</p>
+<h3 id="文件列表"><a href="#文件列表" class="headerlink" title="文件列表"></a>文件列表</h3><p>dir<br>dir /AH</p>
+<h3 id="创建移除文件夹"><a href="#创建移除文件夹" class="headerlink" title="创建移除文件夹"></a>创建移除文件夹</h3><p>mkdir 创建<br>rmdir 移除</p>
 
       
     </div>
@@ -609,64 +664,12 @@
 
 
   
-    <article id="post-cocos2d-x/第一章-cocos2d-x4-0简介" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/14/cocos2d-x/%E7%AC%AC%E4%B8%80%E7%AB%A0-cocos2d-x4-0%E7%AE%80%E4%BB%8B/" class="article-date">
-  <time datetime="2020-08-14T09:07:45.000Z" itemprop="datePublished">2020-08-14</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/cocos2d-x/">cocos2d-x</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/cocos2d-x/%E7%AC%AC%E4%B8%80%E7%AB%A0-cocos2d-x4-0%E7%AE%80%E4%BB%8B/">第一章-cocos2d-x4.0简介</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Cocos2d-x4-0和之前版本的区别"><a href="#Cocos2d-x4-0和之前版本的区别" class="headerlink" title="Cocos2d-x4.0和之前版本的区别"></a>Cocos2d-x4.0和之前版本的区别</h3><p>iOS/macOS 支持 metal - metal是iOS和Mac独有的底层图形库，可以更好挖掘苹果设备的潜力<br>使用 CMake，删除各平台的工程文件 - 减少乱七八糟的文件，使用cmake工具需要时再生成项目文件<br>升级 GLFW 到 3.3 - openGL的开源库升级<br>升级 minizip 到 1.2 - 压缩库升级<br>删除废弃函数 - 让代码更简洁，这种简洁一般为了后继开发，估计后继会有大版本的升级。<br>删除 h5 引擎和 Javascript 绑定 - js h5 支持 creator<br>删除 tiff - 不必要的格式支持<br>删除 SimpleAudioEngine - 删除声音库<br>删除 experimental 名字空间 - 整洁代码<br>修复 macOS 15 系统字体绘制问题 -bug<br>适配 iOS13 -适配问题<br>UIWebView 使用 WKWebView 实现<br>VideoPlayer 使用 AVPlayerController 实现<br>修复 lua 工程在 64 位设备的崩溃问题</p>
-<p>总的来说，Cocos2d-x4.0 和 cocos2d-x3.0比较，修复了bug，代码没有本质的区别，并不是2.x to 3.x的升级，而是对3.x的精简。删除了项目文件使用cmake生成项目文件，删除了冗余的废弃代码，3.x可以部分使用2.x的api，但是4.0x已经行不通了。3.x的资料对4.0x很多仍然适用。</p>
-<h3 id="配置cocos2d-x4-0环境"><a href="#配置cocos2d-x4-0环境" class="headerlink" title="配置cocos2d-x4.0环境"></a>配置cocos2d-x4.0环境</h3><p>安装python2.7 配置环境变量<br>Cocos官网下载源代码解压<br>下载android sdk ndk<br>下载cmake<br>进入源码文件夹运行python setup.py配置好环境</p>
-<h3 id="创建c-项目"><a href="#创建c-项目" class="headerlink" title="创建c++项目"></a>创建c++项目</h3><p>cocos new MyCppGame -l cpp</p>
-<h3 id="Mac生成项目文件"><a href="#Mac生成项目文件" class="headerlink" title="Mac生成项目文件"></a>Mac生成项目文件</h3><p>sudo xcode-select –switch /Applications/Xcode.app<br>cocos run -p iOS</p>
-<p>设计分辨率 1136 640</p>
-<h3 id="移动设备常用的资源处理方式"><a href="#移动设备常用的资源处理方式" class="headerlink" title="移动设备常用的资源处理方式"></a>移动设备常用的资源处理方式</h3><p>移动设备内存有限，为了节省内存，一般都会对贴图进行压缩。<br>一张4MB的贴图，在移动设备中压缩之后只有1/8，也就是0.5MB。</p>
-<p>假如有一张1024px * 1024px的4通道(RGBA8888，每个通道都为8bit)贴图。<br>一般来说，一张纹理所占用的内存的计算方式为长乘以框再撑每个像素的比特数，计算公式日下：</p>
-<p>内存 = 长 * 宽 * 像素比特数</p>
-<p>那么这张图所长的内存为：1024 * 1024 * 4 * 8 bit = 1024 * 1024 * 4 Byte = 4MB</p>
-<p>即一个像素占 32bit == 4Byte。</p>
-<h2 id="一-Android设备"><a href="#一-Android设备" class="headerlink" title="一 Android设备"></a>一 Android设备</h2><p>Android设备中一般使用ETC1压缩，一种有损的图像压缩方式。<br>ETC1是OpenGL2.0支持的标准，压缩之后每个像素占4bit，压缩之后的格式为KTX或者PKM，前者支持存储多纹理，后者只支持单纹理。<br>上面的图片压缩之后的大小为：1024 * 1024 * 4 bit = 0.5MB<br>ETC1的缺点是不支持Alpha通道，不支持有透明度的图片压缩。<br>ETC2解决了Alpha通道，但是它是OpenGL3.0标准，过去考虑到2.0设备的市场占有率，一般使用ETC1。现在市场上大部分手机支持3.0所以ETC2推荐使用</p>
-<h2 id="二-iOS设备"><a href="#二-iOS设备" class="headerlink" title="二 iOS设备"></a>二 iOS设备</h2><p>iOS设备中采用的图像格式一般是PVR，也是一种有损的图像压缩方式。</p>
-<p>PVR压缩分为两种，PVRTC2和PVRTC4。<br>PVRTC4：Compressed format, 4 bits per pixel, ok image quality<br>PVRTC2：Compressed format, 2 bits per pixel, poor image quality</p>
-<p>常用的PVRTC4，压缩之后的大小为：1024 * 1024 * 4 bit = 0.5MB<br>除了压缩内存，PVR可以直接被显卡读取，载入速度更快；缺点是PVR需要PowerVR芯片支持，目前iOS设备都能完美支持，Android支持尚少；此外，PVRTC4只支持方形贴图，非方形会被处理成方形，且长宽必须为2的幂。<br>现在pvrtc二代iphone8以下会出现问题，现阶段推荐使用pvrtc一代</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2020/08/14/cocos2d-x/%E7%AC%AC%E4%B8%80%E7%AB%A0-cocos2d-x4-0%E7%AE%80%E4%BB%8B/" data-id="cke468t140005x7nr09o3ca6m" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -676,7 +679,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos-creator/">cocos creator</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos2d-x/">cocos2d-x</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pc%E9%80%86%E5%90%91/">pc逆向</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2d-arpg%E5%89%8D%E7%AB%AF/">2d arpg前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/3d-mmo%E5%89%8D%E7%AB%AF/">3d mmo前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos-creator/">cocos creator</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cocos2d-x/">cocos2d-x</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pc%E9%80%86%E5%90%91/">pc逆向</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E7%AB%AF/">服务器后端</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -686,7 +689,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/" rel="tag">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" rel="tag">cocos2d-x 基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" rel="tag">游戏系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">游戏系统架构</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -696,7 +699,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 20px;">cocos2d-x apk出包</a> <a href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">cocos2d-x 基础</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 15px;">cocos2d-x apk出包</a> <a href="/tags/cocos2d-x-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">cocos2d-x 基础</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 20px;">游戏开发</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">游戏系统架构</a>
     </div>
   </div>
 
@@ -705,7 +708,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -716,6 +719,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/09/04/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/cpython2/python%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/">python服务器基础</a>
+          </li>
         
           <li>
             <a href="/2020/08/29/cocos2d-x/android%E5%87%BA%E5%8C%85c++%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">android出包c++常见问题</a>
@@ -731,10 +738,6 @@
         
           <li>
             <a href="/2020/08/25/3D%20MMO%E5%BC%80%E5%8F%91/Unity%203D%20MMO%E5%9B%9E%E9%A1%BE/">Unity MMO整体架构概述</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/25/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/">cocos2d-xARPG drawcall优化</a>
           </li>
         
       </ul>
