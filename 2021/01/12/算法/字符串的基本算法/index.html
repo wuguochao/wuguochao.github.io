@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>字符串的基本算法 | -.-.--- -.. .   .-.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="字符串的基本认识 字符由ASCII表示 字符串实际上是一组ASCII码表示 char tmp[] &#x3D; {‘1’,’2’,’3’}; 必须是’ 单引号 char name[10] &#x3D; {‘J’,’o’,’h’,’n’,’\0’};在内存中\0是终止符，终止符之后全是 0 char name[] &#x3D; {‘J’,’o’,’h’,’n’,’\0’};(方法二) char name[] &#x3D; “John”;(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串的基本算法">
+<meta property="og:url" content="http://wuguochao.github.io/2021/01/12/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="-.-.--- -.. .   .-.">
+<meta property="og:description" content="字符串的基本认识 字符由ASCII表示 字符串实际上是一组ASCII码表示 char tmp[] &#x3D; {‘1’,’2’,’3’}; 必须是’ 单引号 char name[10] &#x3D; {‘J’,’o’,’h’,’n’,’\0’};在内存中\0是终止符，终止符之后全是 0 char name[] &#x3D; {‘J’,’o’,’h’,’n’,’\0’};(方法二) char name[] &#x3D; “John”;(">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-12T12:28:28.000Z">
+<meta property="article:modified_time" content="2021-01-13T08:05:14.144Z">
+<meta property="article:author" content="Wu GuoChao">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="-.-.--- -.. .   .-." type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">-.-.--- -.. .   .-.</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wuguochao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-算法/字符串的基本算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/12/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" class="article-date">
+  <time datetime="2021-01-12T12:28:28.000Z" itemprop="datePublished">2021-01-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      字符串的基本算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="字符串的基本认识"><a href="#字符串的基本认识" class="headerlink" title="字符串的基本认识"></a>字符串的基本认识</h3><ul>
+<li>字符由ASCII表示</li>
+<li>字符串实际上是一组ASCII码表示</li>
+<li>char tmp[] = {‘1’,’2’,’3’}; 必须是’ 单引号</li>
+<li>char name[10] = {‘J’,’o’,’h’,’n’,’\0’};在内存中\0是终止符，终止符之后全是 0</li>
+<li>char name[] = {‘J’,’o’,’h’,’n’,’\0’};(方法二)</li>
+<li>char name[] = “John”;(方法三)</li>
+<li>char* name = “John”;(方法四)</li>
+<li>输出使用 %c 字符串使用%s</li>
+</ul>
+<h3 id="字符串的长度"><a href="#字符串的长度" class="headerlink" title="字符串的长度"></a>字符串的长度</h3><ul>
+<li>要点,遇到字符’\0’就停止计算<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">char *name &#x3D; &quot;John&quot;;</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line">for(i&#x3D;0;name[i]!&#x3D; &#39;\0&#39;;i++)</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;字符串长度是%d&quot;,i);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="字符串的大小写切换"><a href="#字符串的大小写切换" class="headerlink" title="字符串的大小写切换"></a>字符串的大小写切换</h3></li>
+<li>要点 大写的范围是 65 - 89 小写的范围是 90 - 122，修改字符时不要使用指针变量，使用数组变量，指针变量会报错。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">char name[] &#x3D; &quot;John&quot;;</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line">for (i; name[i] !&#x3D; &#39;\0&#39;; i++) &#123;</span><br><span class="line">    &#x2F;&#x2F;切换小写</span><br><span class="line">    if (name[i] &gt;&#x3D; 65 &amp;&amp; name[i] &lt; 90)</span><br><span class="line">    &#123;</span><br><span class="line">        name[i] +&#x3D;  32;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printf(&quot;转换后的文字是%s\n&quot;,name);</span><br></pre></td></tr></table></figure>
+<h3 id="元音数量计算"><a href="#元音数量计算" class="headerlink" title="元音数量计算"></a>元音数量计算</h3></li>
+<li>要点 计算对应字符数字就可以<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">char name[] &#x3D; &quot;John&quot;;</span><br><span class="line">int count &#x3D; 0;</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line">for (i; name[i] !&#x3D; &#39;\0&#39;; i++) &#123;</span><br><span class="line">    &#x2F;&#x2F;找出元音</span><br><span class="line">    if (name[i] &#x3D;&#x3D; &#39;a&#39; || name[i] &#x3D;&#x3D; &#39;b&#39; || name[i] &#x3D;&#x3D; &#39;c&#39; || name[i] &#x3D;&#x3D; &#39;d&#39; || name[i] &#x3D;&#x3D; &#39;e&#39;</span><br><span class="line">        || name[i] &#x3D;&#x3D; &#39;A&#39; || name[i] &#x3D;&#x3D; &#39;B&#39; || name[i] &#x3D;&#x3D; &#39;C&#39; || name[i] &#x3D;&#x3D; &#39;D&#39; || name[i] &#x3D;&#x3D; &#39;E&#39;)</span><br><span class="line">    &#123;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printf(&quot;包含了元音数量是%d\n&quot;, count);</span><br></pre></td></tr></table></figure>
+<h3 id="单词数量计算"><a href="#单词数量计算" class="headerlink" title="单词数量计算"></a>单词数量计算</h3></li>
+<li>要点 计算对应的空格，首尾空格不算，空格和空格前一位不是空格计数器加一<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">char name[] &#x3D; &quot; How are    you!&quot;;</span><br><span class="line">int count &#x3D; 0;&#x2F;&#x2F;空格数量</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line">for (i; name[i] !&#x3D; &#39;\0&#39;; i++) &#123;</span><br><span class="line">    &#x2F;&#x2F;空格计算</span><br><span class="line">    if (name[i] &#x3D;&#x3D; &#39; &#39;&amp;&amp;name[i - 1] !&#x3D; &#39; &#39;)</span><br><span class="line">    &#123;</span><br><span class="line">        if (i &#x3D;&#x3D; 0)continue;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printf(&quot;包含了单词数量是%d\n&quot;, count + 1);</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/01/12/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" data-id="ckjv6cod40015ekqbf1f9g7jn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/01/12/%E5%9B%BE%E5%BD%A2/GLSL%E7%BB%98%E5%88%B6%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          GLSL绘制基本图形
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/27/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20%E5%9C%B0%E5%9B%BE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">cocos2d-xARPG 地图结构设计</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x/" rel="tag">cocos2d-x</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">小游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/OPENGL/" style="font-size: 15px;">OPENGL</a> <a href="/tags/cocos2d-x/" style="font-size: 10px;">cocos2d-x</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 15px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 10px;">小游戏开发</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/13/%E5%9B%BE%E5%BD%A2/GLSL%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">GLSL基本概念</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/12/%E5%9B%BE%E5%BD%A2/GLSL%E7%BB%98%E5%88%B6%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2/">GLSL绘制基本图形</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/12/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/">字符串的基本算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/27/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%20%E5%9C%B0%E5%9B%BE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">cocos2d-xARPG 地图结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/2D%20ARPG%E5%BC%80%E5%8F%91/cocos2d-xARPG%E4%BA%BA%E7%89%A9%E5%8A%A8%E7%94%BB%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/">cocos2d-xARPG人物动画问题笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Wu GuoChao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
