@@ -7,15 +7,15 @@
   
   <title>GLSL基本概念 | -.-.--- -.. .   .-.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内置变量和属性1访问 https:&#x2F;&#x2F;threejs.org&#x2F;docs&#x2F;#api&#x2F;en&#x2F;renderers&#x2F;webgl&#x2F;WebGLProgram 详细内容 vshader代码的意义12345void main()&amp;#123;    gl_Position &#x3D; projectionMatrix * modelV">
+  <meta name="description" content="内置变量和属性12访问 https:&#x2F;&#x2F;threejs.org&#x2F;docs&#x2F;#api&#x2F;en&#x2F;renderers&#x2F;webgl&#x2F;WebGLProgram 详细内容- gl_FragCoord 是一个四维向量vec4 xyzw,取值gl_FragCoord.xy左下角 0.5，0.5(pixel_center_integer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GLSL基本概念">
 <meta property="og:url" content="http://wuguochao.github.io/2021/01/13/%E5%9B%BE%E5%BD%A2/GLSL%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="-.-.--- -.. .   .-.">
-<meta property="og:description" content="内置变量和属性1访问 https:&#x2F;&#x2F;threejs.org&#x2F;docs&#x2F;#api&#x2F;en&#x2F;renderers&#x2F;webgl&#x2F;WebGLProgram 详细内容 vshader代码的意义12345void main()&amp;#123;    gl_Position &#x3D; projectionMatrix * modelV">
+<meta property="og:description" content="内置变量和属性12访问 https:&#x2F;&#x2F;threejs.org&#x2F;docs&#x2F;#api&#x2F;en&#x2F;renderers&#x2F;webgl&#x2F;WebGLProgram 详细内容- gl_FragCoord 是一个四维向量vec4 xyzw,取值gl_FragCoord.xy左下角 0.5，0.5(pixel_center_integer">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-13T06:48:24.000Z">
-<meta property="article:modified_time" content="2021-01-13T08:04:48.288Z">
+<meta property="article:modified_time" content="2021-01-15T12:05:17.035Z">
 <meta property="article:author" content="Wu GuoChao">
 <meta property="article:tag" content="OPENGL">
 <meta name="twitter:card" content="summary">
@@ -93,14 +93,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="内置变量和属性"><a href="#内置变量和属性" class="headerlink" title="内置变量和属性"></a>内置变量和属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">访问 https:&#x2F;&#x2F;threejs.org&#x2F;docs&#x2F;#api&#x2F;en&#x2F;renderers&#x2F;webgl&#x2F;WebGLProgram 详细内容</span><br></pre></td></tr></table></figure>
+        <h3 id="内置变量和属性"><a href="#内置变量和属性" class="headerlink" title="内置变量和属性"></a>内置变量和属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">访问 https:&#x2F;&#x2F;threejs.org&#x2F;docs&#x2F;#api&#x2F;en&#x2F;renderers&#x2F;webgl&#x2F;WebGLProgram 详细内容</span><br><span class="line">- gl_FragCoord 是一个四维向量vec4 xyzw,取值gl_FragCoord.xy左下角 0.5，0.5(pixel_center_integer 0，0)右上角窗口最大值</span><br></pre></td></tr></table></figure>
 <h3 id="vshader代码的意义"><a href="#vshader代码的意义" class="headerlink" title="vshader代码的意义"></a>vshader代码的意义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void main()&#123;</span><br><span class="line">    gl_Position &#x3D; projectionMatrix * modelViewMatrix * vec4( position, 1.0 );</span><br><span class="line">    &#x2F;&#x2F;一般大小 gl_Position &#x3D; projectionMatrix * modelViewMatrix * vec4( position*0.5, 1.0 );</span><br><span class="line">    &#x2F;&#x2F; 等于 gl_Position &#x3D; projectionMatrix * modelMatrix *ViewMatrix* vec4( position, 1.0 );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>实际上是说 三角面的每一个点都需要用gl_Position渲染<br>vec4( position, 1.0 ) 本地坐标<br>modelMatrix 本地坐标移到世界坐标（模型坐标）<br>ViewMatrix 摄影机观察坐标<br>projectionMatrix 屏幕投影坐标</p>
 <h3 id="三维向量转化位四维向量"><a href="#三维向量转化位四维向量" class="headerlink" title="三维向量转化位四维向量"></a>三维向量转化位四维向量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vec4(vec3,1.0);</span><br><span class="line">例如vec4(position,1.0);</span><br></pre></td></tr></table></figure>
 
 <h3 id="fshader代码的意义"><a href="#fshader代码的意义" class="headerlink" title="fshader代码的意义"></a>fshader代码的意义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void main()&#123;</span><br><span class="line">    gl_FragColor &#x3D; vec4(0.0,1.0,0.0,1.0);&#x2F;&#x2F;绿色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>每一个面片都用绿色渲染，vec4的颜色rgba每个颜色通道范围是0.0-1.0</p>
-
+<h3 id="uniform-变量-attribute-变量"><a href="#uniform-变量-attribute-变量" class="headerlink" title="uniform 变量 attribute 变量"></a>uniform 变量 attribute 变量</h3><p>从程序中传入shader得变量用uniform attribute 是管线程序的固有变量<br>设置uniform变量后只改变uniform的数值就可以</p>
+<h3 id="mix-函数"><a href="#mix-函数" class="headerlink" title="mix 函数"></a>mix 函数</h3><p>mix(x,y,a)<br>x其实数值，y终止数值,目标点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vec2 uv &#x3D; gl_FragCoord.xy</span><br><span class="line">mix(vec4(1.0,0.0,0.0,1.0),vec4(0.0,0.0,1.0,1.0),uv.y)</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
