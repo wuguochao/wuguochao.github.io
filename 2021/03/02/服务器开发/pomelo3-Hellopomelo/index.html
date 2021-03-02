@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>pomelo3-Hellopomelo | -.-.--- -.. .   .-.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="pomelo的HelloWorld 老传统，让我们也先从HelloWorld这个例子开始吧。 新建项目使用pomelo的命令行工具可以快速创建一个项目，命令如下： $ pomelo init .&#x2F;HelloWorld或者你也可以使用下面的三个命令： $ mkdir HelloWorld$ cd HelloWorld$ pomelo init这两种创建方式是等价的，更多关于pomelo命令行使用的文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pomelo3-Hellopomelo">
+<meta property="og:url" content="http://wuguochao.github.io/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/index.html">
+<meta property="og:site_name" content="-.-.--- -.. .   .-.">
+<meta property="og:description" content="pomelo的HelloWorld 老传统，让我们也先从HelloWorld这个例子开始吧。 新建项目使用pomelo的命令行工具可以快速创建一个项目，命令如下： $ pomelo init .&#x2F;HelloWorld或者你也可以使用下面的三个命令： $ mkdir HelloWorld$ cd HelloWorld$ pomelo init这两种创建方式是等价的，更多关于pomelo命令行使用的文">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-02T02:20:20.000Z">
+<meta property="article:modified_time" content="2021-03-02T02:26:42.447Z">
+<meta property="article:author" content="Wu GuoChao">
+<meta property="article:tag" content="pomelo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="-.-.--- -.. .   .-." type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">-.-.--- -.. .   .-.</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wuguochao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-服务器开发/pomelo3-Hellopomelo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/" class="article-date">
+  <time datetime="2021-03-02T02:20:20.000Z" itemprop="datePublished">2021-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pomelo3-Hellopomelo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>pomelo的HelloWorld</p>
+<p>老传统，让我们也先从HelloWorld这个例子开始吧。</p>
+<p>新建项目<br>使用pomelo的命令行工具可以快速创建一个项目，命令如下：</p>
+<p>$ pomelo init ./HelloWorld<br>或者你也可以使用下面的三个命令：</p>
+<p>$ mkdir HelloWorld<br>$ cd HelloWorld<br>$ pomelo init<br>这两种创建方式是等价的，更多关于pomelo命令行使用的文档，请参阅pomelo命令行工具使用。在初始化项目的时候，用户需要选择其底层使用的通信协议，分为socket.io和websocket。</p>
+<p>然后，进入到HelloWorld文件夹，安装依赖包：</p>
+<p>$ sh npm-install.sh<br>windows用户，可以直接运行 npm-install.bat</p>
+<p>项目目录结构<br>让我们来看看一个pomelo项目的大致结构</p>
+<p>新建立的项目结构如下图所示：</p>
+<p>项目目录结构</p>
+<p>该目录结构很清楚地展示了游戏项目的前后端分层结构，分别在各个目录下填写相关代码，即可快速开发游戏。下面对各个目录进行简要分析：</p>
+<p>game-server<br>game-server是用pomelo框架搭建的游戏服务器，以文件app.js作为入口，运行游戏的所有逻辑和功能。在接下来的开发中，所有游戏逻辑、功能、配置等都在该目录下进行。</p>
+<p>app子目录<br>这个目录下放置所有的游戏服务器代码的地方，用户在这里实现不同类型的服务器，添加对应的Handler，Remote等等。</p>
+<p>config子目录<br>game-server下config包括了游戏服务器的所有配置信息。配置信息以JSON文件的格式进行定义，包含有日志、master、server等服务器的配置信息。该目录还可以进行扩展，对数据库配置信息、地图信息和数值表等信息进行定义。总而言之，这里是放着所有游戏服务器相关的配置信息的地方。</p>
+<p>logs子目录<br>日志是项目中不可或缺的，可以对项目的运行情况进行很好的备份，也是系统运维的参考数据之一，logs存放了游戏服务器所有的日志信息。</p>
+<p>shared<br>shared存放一些前后端、game-server与web-server共用代码，由于都是javascript代码，那么对于一些工具或者算法代码，就可以前后端共用，极大地提高了代码重用性。</p>
+<p>web-server<br>web-server是用express 3.x框架搭建的web服务器，以文件app.js作为入口，当然开发者可以选择Nginx等其他web服务器。如果游戏的客户端不是web的话，如Android平台的话，这个目录就不是必须的了。当然，在这个例子中，我们的客户端是web，所以web服务器还是必须的。</p>
+<p>启动项目<br>对于我们这个例子来说，由于客户端是web，所以必须启动game-server(游戏服务器)和web-server(web服务器)</p>
+<p>启动game-server服务器：</p>
+<p>$ cd game-server<br>$ pomelo start<br>启动web-server服务器：</p>
+<p>$ cd web-server<br>$ node app<br>在启动过程中可能会有端口号冲突导致启动不成功，只需在config里面修改使用的端口号即可。如果上面的启动都没有问题的话，我们就可以对我们的HelloWorld进行测试了。用浏览器(推荐使用chrome)访问 localhost:3001或者 127.0.0.1:3001 即可, 点击Test Game Server，提示 game server is ok 说明运行成功，如下图所示：</p>
+<p>test</p>
+<p>查看服务器<br>可以使用pomelo list查看已经启动的服务器，如下图所示：</p>
+<p>test</p>
+<p>服务器状态可以查看5种状态信息：</p>
+<p>serverId：服务器的serverId，同config配置表中的id。<br>serverType：服务器的serverType，同config配置表中的type。<br>pid：服务器对应的进程pid。<br>heapUsed：该服务器已经使用的堆大小（单位：兆）。<br>uptime：该服务器启动时长（单位：分钟）。<br>关闭项目<br>可以使用以下两种方式关闭项目：</p>
+<p>$ cd game-server<br>$ pomelo stop<br>或者</p>
+<p>$ cd game-server<br>$ pomelo kill<br>其中pomelo stop比较优雅，pomelo kill比较粗暴，安全性低，开发环境下可以使用，产品环境慎用，更详细的pomelo命令行用法请参阅pomelo命令行工具使用。</p>
+<p>小结<br>到这里为止，我们已经成功安装了pomelo，并成功运行了HelloWorld。接下来，建议你看一下pomelo整体的一个较详细的概述。 如果你已经迫不及待地想写代码，可以去pomelo例子教程, 那里以一个chat应用为例，一步一步地向你展示如何来使用pomelo进行一个实际应用的开发，以及pomelo的一些API的使用方式等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/" data-id="cklrdwmns000184qb4jbycmk1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          pomelo1-pomelo简介
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo2-pomelo%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">pomelo2-pomelo安装</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/">pomelo1-pomelo简介</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/">pomelo3-Hellopomelo</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo2-pomelo%E5%AE%89%E8%A3%85/">pomelo2-pomelo安装</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年2月日记</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">cg基础概念</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Wu GuoChao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

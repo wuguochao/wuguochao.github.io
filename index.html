@@ -66,6 +66,282 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-服务器开发/pomelo1-pomelo简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/" class="article-date">
+  <time datetime="2021-03-02T13:18:54.000Z" itemprop="datePublished">2021-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/">pomelo1-pomelo简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>欢迎使用pomelo</p>
+<p>pomelo是一个游戏服务器框架，与以往单进程的游戏框架不同, 它是高性能、高可伸缩、分布式多进程的游戏服务器框架，并且使用很简单。它包括基础开发框架和一系列相关工具和库，可以帮助开发者省去游戏开发中枯燥的重复劳动和底层逻辑工作，免除开发者的重造轮子，让开发者可以更多地去关注游戏的具体逻辑，大大提高开发效率。pomelo强大的可伸缩性和灵活性使得pomelo也可以作为通用的分布式实时应用开发框架，用于一些高实时应用的开发，而且pomelo在很多方面的表现甚至超越了现有的开源实时应用框架。pomelo支持所有主流平台的客户端，并提供了客户端的开发库，使得客户端的开发变得很友好。</p>
+<p>pomelo组成<br>pomelo 是由一系列相互之间弱耦合的部分组合而成的，包括：</p>
+<p>框架<br>框架是pomelo最核心的部分;</p>
+<p>库<br>pomelo提供了很多库，有些是跟游戏逻辑完全相关的，如AI，AOI，寻路等；也有与游戏逻辑无关但比较通用的，如定时任务执行， 数据同步等等；</p>
+<p>工具<br>pomelo提供了服务器管理控制工具、命令行工具、压力测试工具等一系列工具；</p>
+<p>客户端库<br>pomelo提供了各类平台的客户端开发库，包括js, C, C#，Android, iOS, Unity3D等等，几乎支持涵盖了目前所有的主流平台，由于pomelo的协议是开放的，架构耦合松散，对于没有支持的客户端平台，用户也可以很容易地开发出自己需要的库，定制自己的通信协议；</p>
+<p>demo<br>一个框架需要强大的demo来展示功能并为开发者提供示例，pomelo提供了全平台的聊天demo和基于HTML5的捡宝demo，系统还提供了一个强大的基于HTML5开发的MMO游戏demoLordofpomelo（源码）。</p>
+<p>为什么使用pomelo？<br>高并发、高实时的游戏服务器的开发是很复杂的工作。跟web应用一样， 一个好的开源容器或开发框架可以大大减少游戏服务器开发的复杂性，让开发变得更加容易。遗憾的是目前在游戏服务器开发领域一直没有太好的开源解决方案。 pomelo将填补这个空白， 打造一款完全开源的高性能高并发游戏服务器框架。 pomelo的优势有以下几点：</p>
+<p>架构的可伸缩性好<br>采用多进程单线程的运行架构，扩展服务器非常方便， node.js的网络io优势提供了高可伸缩性，写好的应用只需要简单地修改一下配置就能轻松地伸缩扩充；</p>
+<p>易用<br>pomelo基于轻量级的nodejs，其开发模型与web应用的开发类似，基于convention over configuration的理念， 几乎零配置， api的设计也很精简，很容易上手，开发快速；</p>
+<p>框架的松耦合和可扩展性好<br>遵循node.js微模块的原则， 框架本身只有很少的代码，所有component、库、工具都可以用npm module的形式扩展进来，任何第三方都可以根据自己的需要开发自定义module，并把它整合到pomelo的框架中。</p>
+<p>完整的demo和文档<br>pomelo提供了完整的中英文文档，pomelo还提供一个完整的开源MMO游戏demo–Lordofpomelo（源码），一个超过1万行代码的游戏demo，使开发者可以随时借鉴demo的设计与开发思路。</p>
+<p>pomelo的定位<br>pomelo是一个轻量级的服务器框架，它最适合的应用领域是网页游戏、社交游戏、移动游戏的服务端，开发者会发现pomelo可以用如此少的代码达到强大的扩展性和伸缩性。当然还不仅仅是游戏，用pomelo开发高实时web应用也如此合适， 而且伸缩性比其它框架好。</p>
+<p>不推荐将pomelo用于大型的MMORPG游戏开发，尤其是大型3D游戏， 还是需要象Bigworld这样的商用引擎来支撑。</p>
+<p>好了，是不是有迫不及待了，那就赶快安装pomelo来试试吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/" data-id="cklrdwmno000084qb9cnp9ck2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-服务器开发/pomelo3-Hellopomelo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/" class="article-date">
+  <time datetime="2021-03-02T02:20:20.000Z" itemprop="datePublished">2021-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/">pomelo3-Hellopomelo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>pomelo的HelloWorld</p>
+<p>老传统，让我们也先从HelloWorld这个例子开始吧。</p>
+<p>新建项目<br>使用pomelo的命令行工具可以快速创建一个项目，命令如下：</p>
+<p>$ pomelo init ./HelloWorld<br>或者你也可以使用下面的三个命令：</p>
+<p>$ mkdir HelloWorld<br>$ cd HelloWorld<br>$ pomelo init<br>这两种创建方式是等价的，更多关于pomelo命令行使用的文档，请参阅pomelo命令行工具使用。在初始化项目的时候，用户需要选择其底层使用的通信协议，分为socket.io和websocket。</p>
+<p>然后，进入到HelloWorld文件夹，安装依赖包：</p>
+<p>$ sh npm-install.sh<br>windows用户，可以直接运行 npm-install.bat</p>
+<p>项目目录结构<br>让我们来看看一个pomelo项目的大致结构</p>
+<p>新建立的项目结构如下图所示：</p>
+<p>项目目录结构</p>
+<p>该目录结构很清楚地展示了游戏项目的前后端分层结构，分别在各个目录下填写相关代码，即可快速开发游戏。下面对各个目录进行简要分析：</p>
+<p>game-server<br>game-server是用pomelo框架搭建的游戏服务器，以文件app.js作为入口，运行游戏的所有逻辑和功能。在接下来的开发中，所有游戏逻辑、功能、配置等都在该目录下进行。</p>
+<p>app子目录<br>这个目录下放置所有的游戏服务器代码的地方，用户在这里实现不同类型的服务器，添加对应的Handler，Remote等等。</p>
+<p>config子目录<br>game-server下config包括了游戏服务器的所有配置信息。配置信息以JSON文件的格式进行定义，包含有日志、master、server等服务器的配置信息。该目录还可以进行扩展，对数据库配置信息、地图信息和数值表等信息进行定义。总而言之，这里是放着所有游戏服务器相关的配置信息的地方。</p>
+<p>logs子目录<br>日志是项目中不可或缺的，可以对项目的运行情况进行很好的备份，也是系统运维的参考数据之一，logs存放了游戏服务器所有的日志信息。</p>
+<p>shared<br>shared存放一些前后端、game-server与web-server共用代码，由于都是javascript代码，那么对于一些工具或者算法代码，就可以前后端共用，极大地提高了代码重用性。</p>
+<p>web-server<br>web-server是用express 3.x框架搭建的web服务器，以文件app.js作为入口，当然开发者可以选择Nginx等其他web服务器。如果游戏的客户端不是web的话，如Android平台的话，这个目录就不是必须的了。当然，在这个例子中，我们的客户端是web，所以web服务器还是必须的。</p>
+<p>启动项目<br>对于我们这个例子来说，由于客户端是web，所以必须启动game-server(游戏服务器)和web-server(web服务器)</p>
+<p>启动game-server服务器：</p>
+<p>$ cd game-server<br>$ pomelo start<br>启动web-server服务器：</p>
+<p>$ cd web-server<br>$ node app<br>在启动过程中可能会有端口号冲突导致启动不成功，只需在config里面修改使用的端口号即可。如果上面的启动都没有问题的话，我们就可以对我们的HelloWorld进行测试了。用浏览器(推荐使用chrome)访问 localhost:3001或者 127.0.0.1:3001 即可, 点击Test Game Server，提示 game server is ok 说明运行成功，如下图所示：</p>
+<p>test</p>
+<p>查看服务器<br>可以使用pomelo list查看已经启动的服务器，如下图所示：</p>
+<p>test</p>
+<p>服务器状态可以查看5种状态信息：</p>
+<p>serverId：服务器的serverId，同config配置表中的id。<br>serverType：服务器的serverType，同config配置表中的type。<br>pid：服务器对应的进程pid。<br>heapUsed：该服务器已经使用的堆大小（单位：兆）。<br>uptime：该服务器启动时长（单位：分钟）。<br>关闭项目<br>可以使用以下两种方式关闭项目：</p>
+<p>$ cd game-server<br>$ pomelo stop<br>或者</p>
+<p>$ cd game-server<br>$ pomelo kill<br>其中pomelo stop比较优雅，pomelo kill比较粗暴，安全性低，开发环境下可以使用，产品环境慎用，更详细的pomelo命令行用法请参阅pomelo命令行工具使用。</p>
+<p>小结<br>到这里为止，我们已经成功安装了pomelo，并成功运行了HelloWorld。接下来，建议你看一下pomelo整体的一个较详细的概述。 如果你已经迫不及待地想写代码，可以去pomelo例子教程, 那里以一个chat应用为例，一步一步地向你展示如何来使用pomelo进行一个实际应用的开发，以及pomelo的一些API的使用方式等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/" data-id="cklrdwmns000184qb4jbycmk1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-服务器开发/pomelo2-pomelo安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo2-pomelo%E5%AE%89%E8%A3%85/" class="article-date">
+  <time datetime="2021-03-02T02:19:11.000Z" itemprop="datePublished">2021-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo2-pomelo%E5%AE%89%E8%A3%85/">pomelo2-pomelo安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>安装pomelo</p>
+<p>pomelo是基于Node.js的，目前pomelo已经完全支持Windows、Linux、Mac等多种平台。</p>
+<p>准备<br>确保你的机器可以上网,因为安装pomelo的过程需要从网上下载其依赖的包。</p>
+<p>确保你的系统上已经要安装了Node，目前最新的Node提供了已经编译好的二进制安装包，包括Windows，Mac和Linux等平台。想省事的话，直接去这里下载对应的安装包，直接安装就好了。Node同时也提供了传统的从源码编译的方式安装，不过比起直接使用二进制的方式要麻烦。</p>
+<p>确保你的系统中安装有python(2.5 &lt; version &lt; 3.0)以及C++的编译器。Node的源码主要由C++代码和JavaScript代码构成，但是却用gyp工具来做源码的项目管理，该工具采用Python语言写成的。对于非windows平台，一般都会预装Python以及C++编译工具；对于Windows系统，请确保你的Windows系统包含源码编译工具。在Windows平台上，Node.js采用gyp来生成Visual Studio Solution文件，最终通过VC++的编译器将其编译为二进制文件。</p>
+<p>虽然pomelo是用Javascript写成，但是pomelo依赖的库中，有使用了C++语言写的扩展，因此安装pomelo的过程中会使用到C++编译器。 所以，在安装之前请确保你的Windows系统满足以下两个条件：</p>
+<p>python(2.5&lt; version &lt;3.0)。<br>VC++ 编译器，包含在Visual Studio 2010中（VC++ 2010 Express亦可）。对于windows8的用户，需要安装Microsoft Visual Studio C++ 2012。<br>如果你使用的是Mac OS X系统, 则需要安装Xcode Command Line Tools或者Xcode的完整包以及make工具.</p>
+<p>安装pomelo<br>使用npm(node包管理工具)全局安装pomelo:</p>
+<p>$ npm install pomelo -g<br>可以通过如下命令下载源代码的方式安装</p>
+<p>$ git clone <a target="_blank" rel="noopener" href="https://github.com/NetEase/pomelo.git">https://github.com/NetEase/pomelo.git</a><br>$ cd pomelo<br>$ npm install -g<br>其中-g表示全局安装，关于npm的使用问题，可以参考npm的文档，里面有详细的npm使用的介绍。如果安装过程中没有报错误，说明安装成功。</p>
+<p>windows下安装经验：</p>
+<ol>
+<li>node,vs2010 和 python(2.5&lt; v &lt; 3) 都是32位或者都是64位的。</li>
+<li>配置  PYTHON=d:\Python27\python.exe(设置成你自己的路径)。注意不是path里面,而是和path同级的，直接在全局或者当前用户下配置。</li>
+<li>保证环境变量path里面有 %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;<br>注： 这三个环境变量中貌似只有%SystemRoot%\system32这个环境变量有用，没具体试（没有他会报CreateProcessW找不到的错误)。</li>
+<li>如果在命令行界面安装pomelo失败，可以在Visual Studio的命令行界面安装。<br>下面我们将通过一个HelloWorld项目来检验我们的安装是否成功。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo2-pomelo%E5%AE%89%E8%A3%85/" data-id="cklrdwmnu000384qbewar7arv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-金融/2021年2月日记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/" class="article-date">
+  <time datetime="2021-02-28T14:35:03.000Z" itemprop="datePublished">2021-02-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年2月日记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">人民银行为主体，境内资本有国有资本，民营资本，机构基金，私募基金，境外资本，海外资本和港澳台资本</span><br><span class="line">最后一周五连暴跌。连续两个月的第四周暴跌。</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/" data-id="cklrdpj3i0009q0qba5kbfl80" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-图形/CG/cg基础概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" class="article-date">
+  <time datetime="2021-02-02T02:52:54.000Z" itemprop="datePublished">2021-02-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">cg基础概念</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vertex-和-fragment"><a href="#vertex-和-fragment" class="headerlink" title="vertex 和 fragment"></a>vertex 和 fragment</h3><p>vertex 每帧会处理mesh的每个点， fragment是处理每个像素</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" data-id="cklrdpj3m000gq0qb0rvo6y8q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-金融/2021年1月日记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/01/29/%E9%87%91%E8%9E%8D/2021%E5%B9%B41%E6%9C%88%E6%97%A5%E8%AE%B0/" class="article-date">
@@ -128,7 +404,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/29/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xarpg%20%E4%BD%8E%E7%AB%AF%E6%89%8B%E6%9C%BA%E5%B4%A9%E6%BA%83%E9%97%AE%E9%A2%98/">cocos2d-xarpg 低端手机崩溃问题</a>
+      <a class="article-title" href="/2021/01/29/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xarpg%20%E4%BD%8E%E7%AB%AF%E6%89%8B%E6%9C%BA%E5%B4%A9%E6%BA%83%E9%97%AE%E9%A2%98/">cocos2d-xarpg 性能问题</a>
     </h1>
   
 
@@ -137,7 +413,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">机型：vivo z1青春版</span><br><span class="line">配置：骁龙626 八核</span><br><span class="line">运行内存：4g</span><br></pre></td></tr></table></figure>
-<p>在怪物超多场景卡顿后闪退<br>1.可能同时下载加载资源过多达到cpu瓶颈<br>2.可能缓存了过多的图像资源后达到内存瓶颈崩溃<br>3.可能因为声音播放逻辑问题</p>
+<p>在怪物超多场景卡顿后闪退<br>可能缓存了过多的图像资源后达到内存瓶颈崩溃</p>
+<h3 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h3><ol>
+<li>内存超标不断出发系统GC造成卡顿和崩溃。（资源优化，场景内存管理，范围内存管理）</li>
+<li>下载和加载卡顿，需要做资源下载和加载的管理。下载队列的暂停，再开，插入，位置移动操作。</li>
+<li>总的来说gc超标造成的是掉帧，和卡顿有显著不同。</li>
+</ol>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><ol>
+<li>资源：加载管理,内存资源第一步降低到900M以下，最优目标是600M以下。dc：地面物体的处理</li>
+<li>资源：资源下载，下载队列的暂停，再开，插入，位置移动操作。 dc: 头部hub处理</li>
+<li>资源：加载和下载 再细分优化，必要时采用LOD策略，内存内八方向变为四方向，一组动作资源拆分为两组，减少内存负载。 DC：主界面优化，尽量降低指标给人物素材让路.</li>
+<li>资源：准备一组删减版待机动作，渲染高压力时候，切换为删减版图 dc：怪物优化</li>
+<li>略…</li>
+</ol>
 
       
     </div>
@@ -304,276 +592,11 @@
 
 
   
-    <article id="post-图形/GLSL基本概念" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/01/13/%E5%9B%BE%E5%BD%A2/GLSL%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-  <time datetime="2021-01-13T06:48:24.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/13/%E5%9B%BE%E5%BD%A2/GLSL%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">GLSL基本概念</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="内置变量和属性"><a href="#内置变量和属性" class="headerlink" title="内置变量和属性"></a>内置变量和属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">访问 https:&#x2F;&#x2F;threejs.org&#x2F;docs&#x2F;#api&#x2F;en&#x2F;renderers&#x2F;webgl&#x2F;WebGLProgram 详细内容</span><br><span class="line">- gl_FragCoord 是一个四维向量vec4 xyzw,取值gl_FragCoord.xy左下角 0.5，0.5(pixel_center_integer 0，0)右上角窗口最大值</span><br></pre></td></tr></table></figure>
-<h3 id="vshader代码的意义"><a href="#vshader代码的意义" class="headerlink" title="vshader代码的意义"></a>vshader代码的意义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void main()&#123;</span><br><span class="line">    gl_Position &#x3D; projectionMatrix * modelViewMatrix * vec4( position, 1.0 );</span><br><span class="line">    &#x2F;&#x2F;一般大小 gl_Position &#x3D; projectionMatrix * modelViewMatrix * vec4( position*0.5, 1.0 );</span><br><span class="line">    &#x2F;&#x2F; 等于 gl_Position &#x3D; projectionMatrix * modelMatrix *ViewMatrix* vec4( position, 1.0 );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实际上是说 三角面的每一个点都需要用gl_Position渲染<br>vec4( position, 1.0 ) 本地坐标<br>modelMatrix 本地坐标移到世界坐标（模型坐标）<br>ViewMatrix 摄影机观察坐标<br>projectionMatrix 屏幕投影坐标</p>
-<h3 id="三维向量转化位四维向量"><a href="#三维向量转化位四维向量" class="headerlink" title="三维向量转化位四维向量"></a>三维向量转化位四维向量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vec4(vec3,1.0);</span><br><span class="line">例如vec4(position,1.0);</span><br></pre></td></tr></table></figure>
-
-<h3 id="fshader代码的意义"><a href="#fshader代码的意义" class="headerlink" title="fshader代码的意义"></a>fshader代码的意义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void main()&#123;</span><br><span class="line">    gl_FragColor &#x3D; vec4(0.0,1.0,0.0,1.0);&#x2F;&#x2F;绿色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>每一个面片都用绿色渲染，vec4的颜色rgba每个颜色通道范围是0.0-1.0</p>
-<h3 id="uniform-变量-attribute-变量"><a href="#uniform-变量-attribute-变量" class="headerlink" title="uniform 变量 attribute 变量"></a>uniform 变量 attribute 变量</h3><p>从程序中传入shader得变量用uniform attribute 是管线程序的固有变量<br>设置uniform变量后只改变uniform的数值就可以</p>
-<h3 id="mix-函数"><a href="#mix-函数" class="headerlink" title="mix 函数"></a>mix 函数</h3><p>mix(x,y,a)<br>x其实数值，y终止数值,目标点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vec2 uv &#x3D; gl_FragCoord.xy</span><br><span class="line">mix(vec4(1.0,0.0,0.0,1.0),vec4(0.0,0.0,1.0,1.0),uv.y)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2021/01/13/%E5%9B%BE%E5%BD%A2/GLSL%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" data-id="ckjv6cocw000lekqb7zrh13y4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-图形/GLSL绘制基本图形" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/01/12/%E5%9B%BE%E5%BD%A2/GLSL%E7%BB%98%E5%88%B6%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2/" class="article-date">
-  <time datetime="2021-01-12T12:31:27.000Z" itemprop="datePublished">2021-01-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/12/%E5%9B%BE%E5%BD%A2/GLSL%E7%BB%98%E5%88%B6%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2/">GLSL绘制基本图形</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2021/01/12/%E5%9B%BE%E5%BD%A2/GLSL%E7%BB%98%E5%88%B6%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2/" data-id="ckjv6cocv000iekqbhlur1hmc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-算法/字符串的基本算法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/01/12/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" class="article-date">
-  <time datetime="2021-01-12T12:28:28.000Z" itemprop="datePublished">2021-01-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/12/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/">字符串的基本算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="字符串的基本认识"><a href="#字符串的基本认识" class="headerlink" title="字符串的基本认识"></a>字符串的基本认识</h3><ul>
-<li>字符由ASCII表示</li>
-<li>字符串实际上是一组ASCII码表示</li>
-<li>char tmp[] = {‘1’,’2’,’3’}; 必须是’ 单引号</li>
-<li>char name[10] = {‘J’,’o’,’h’,’n’,’\0’};在内存中\0是终止符，终止符之后全是 0</li>
-<li>char name[] = {‘J’,’o’,’h’,’n’,’\0’};(方法二)</li>
-<li>char name[] = “John”;(方法三)</li>
-<li>char* name = “John”;(方法四)</li>
-<li>输出使用 %c 字符串使用%s</li>
-</ul>
-<h3 id="字符串的长度"><a href="#字符串的长度" class="headerlink" title="字符串的长度"></a>字符串的长度</h3><ul>
-<li>要点,遇到字符’\0’就停止计算<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">char *name &#x3D; &quot;John&quot;;</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line">for(i&#x3D;0;name[i]!&#x3D; &#39;\0&#39;;i++)</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;字符串长度是%d&quot;,i);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="字符串的大小写切换"><a href="#字符串的大小写切换" class="headerlink" title="字符串的大小写切换"></a>字符串的大小写切换</h3></li>
-<li>要点 大写的范围是 65 - 90 小写的范围是 97 - 122，48-57 数字1-0修改字符时不要使用指针变量，使用数组变量，指针变量会报错。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">char name[] &#x3D; &quot;John&quot;;</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line">for (i; name[i] !&#x3D; &#39;\0&#39;; i++) &#123;</span><br><span class="line">    &#x2F;&#x2F;切换小写</span><br><span class="line">    if (name[i] &gt;&#x3D; 65 &amp;&amp; name[i] &lt; 90)</span><br><span class="line">    &#123;</span><br><span class="line">        name[i] +&#x3D;  32;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printf(&quot;转换后的文字是%s\n&quot;,name);</span><br></pre></td></tr></table></figure>
-<h3 id="元音数量计算"><a href="#元音数量计算" class="headerlink" title="元音数量计算"></a>元音数量计算</h3></li>
-<li>要点 计算对应字符数字就可以<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">char name[] &#x3D; &quot;John&quot;;</span><br><span class="line">int count &#x3D; 0;</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line">for (i; name[i] !&#x3D; &#39;\0&#39;; i++) &#123;</span><br><span class="line">    &#x2F;&#x2F;找出元音</span><br><span class="line">    if (name[i] &#x3D;&#x3D; &#39;a&#39; || name[i] &#x3D;&#x3D; &#39;b&#39; || name[i] &#x3D;&#x3D; &#39;c&#39; || name[i] &#x3D;&#x3D; &#39;d&#39; || name[i] &#x3D;&#x3D; &#39;e&#39;</span><br><span class="line">        || name[i] &#x3D;&#x3D; &#39;A&#39; || name[i] &#x3D;&#x3D; &#39;B&#39; || name[i] &#x3D;&#x3D; &#39;C&#39; || name[i] &#x3D;&#x3D; &#39;D&#39; || name[i] &#x3D;&#x3D; &#39;E&#39;)</span><br><span class="line">    &#123;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printf(&quot;包含了元音数量是%d\n&quot;, count);</span><br></pre></td></tr></table></figure>
-<h3 id="单词数量计算"><a href="#单词数量计算" class="headerlink" title="单词数量计算"></a>单词数量计算</h3></li>
-<li>要点 计算对应的空格，首尾空格不算，空格和空格前一位不是空格计数器加一<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">char name[] &#x3D; &quot; How are    you!   &quot;;</span><br><span class="line">int count &#x3D; 0;&#x2F;&#x2F;空格数量</span><br><span class="line">int i;</span><br><span class="line"></span><br><span class="line">for (i&#x3D;0; name[i] !&#x3D; &#39;\0&#39;; i++) &#123;</span><br><span class="line">    &#x2F;&#x2F;空格计算</span><br><span class="line">    if (name[i] &#x3D;&#x3D; &#39; &#39;&amp;&amp;name[i - 1] !&#x3D; &#39; &#39;)</span><br><span class="line">    &#123;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;从尾部\0前删除空格数量</span><br><span class="line">for (i; name[i] !&#x3D; &#39; &#39;;i--) &#123;</span><br><span class="line">    count--;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;从头部删除空格数量</span><br><span class="line">for (i&#x3D;0;name[i]&#x3D;&#x3D;&#39; &#39;;i++)</span><br><span class="line">&#123;</span><br><span class="line">    count--;</span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;包含了单词数量是%d\n&quot;, count + 1);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="包含有效字母"><a href="#包含有效字母" class="headerlink" title="包含有效字母"></a>包含有效字母</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">bool validateString(char name[]) &#123;</span><br><span class="line">    </span><br><span class="line">    for (int i &#x3D; 0; name[i] !&#x3D; &#39;\0&#39;;i++) &#123;</span><br><span class="line">        printf(&quot;char is %d\n&quot;,name[i]);</span><br><span class="line">        if((name[i]&gt;&#x3D;97&amp;&amp;name[i]&lt;&#x3D;122)</span><br><span class="line">            || (name[i] &gt;&#x3D; 65 &amp;&amp; name[i] &lt;&#x3D; 90)</span><br><span class="line">            || (name[i] &gt;&#x3D; 48 &amp;&amp; name[i] &lt;&#x3D; 57)) &#123;</span><br><span class="line">            printf(&quot;char is %c\n&quot;, name[i]);</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="反转字符串"><a href="#反转字符串" class="headerlink" title="反转字符串"></a>反转字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void reverseString(char pStr[])</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;转换前的字符串是%s\n&quot;, pStr);</span><br><span class="line">    int i,j;</span><br><span class="line">    char tmp;</span><br><span class="line">    for (i &#x3D; 0; pStr[i] !&#x3D; &#39;\0&#39;; i++) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    j &#x3D; i - 1;</span><br><span class="line">    for (i &#x3D; 0; i &lt; j;i++,j--) &#123;</span><br><span class="line">        tmp &#x3D; pStr[i];</span><br><span class="line">        pStr[i] &#x3D; pStr[j];</span><br><span class="line">        pStr[j] &#x3D; tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;转换后的字符串是%s\n&quot;,pStr);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="两组字符串比对"><a href="#两组字符串比对" class="headerlink" title="两组字符串比对"></a>两组字符串比对</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">char testname[] &#x3D; &quot;mynameistest&quot;;</span><br><span class="line">char testname2[] &#x3D; &quot;mynameisover&quot;;</span><br><span class="line"></span><br><span class="line">bool issame &#x3D; true;</span><br><span class="line"></span><br><span class="line">int i, j;</span><br><span class="line">for (i&#x3D;0,j &#x3D; 0; testname[i] !&#x3D; &#39;\0&#39;; i++,j++) &#123;</span><br><span class="line">    if (testname[i] !&#x3D; testname2[j])</span><br><span class="line">    &#123;</span><br><span class="line">        issame &#x3D; false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (!issame)</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;两组字符串不相同！&quot;);</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;两组字符串相同。&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="检查字符串是否是回环文"><a href="#检查字符串是否是回环文" class="headerlink" title="检查字符串是否是回环文"></a>检查字符串是否是回环文</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">char palindrome[] &#x3D; &quot;abcdadcba&quot;;</span><br><span class="line"></span><br><span class="line">int i, j;</span><br><span class="line">int length;</span><br><span class="line">for (length &#x3D; 0; palindrome[length] !&#x3D; &#39;\0&#39;; length++) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool ispalindrome &#x3D; true;</span><br><span class="line">for (i &#x3D; 0, j &#x3D; length-1; j&gt;i;i++,j--) &#123;</span><br><span class="line">    printf(&quot;字符%d是%c\n&quot;,i, palindrome[i]);</span><br><span class="line">    printf(&quot;字符%d是%c\n&quot;, j, palindrome[j]);</span><br><span class="line">    if (palindrome[i] !&#x3D; palindrome[j]) &#123;</span><br><span class="line">        ispalindrome &#x3D; false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (ispalindrome) &#123;</span><br><span class="line">    printf(&quot;这个字符串是回环文&quot;);</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;这个字符串不是回环文&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="检查字母是否重复"><a href="#检查字母是否重复" class="headerlink" title="检查字母是否重复"></a>检查字母是否重复</h3><ul>
-<li>暴力循环<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">bool isDup &#x3D; false;</span><br><span class="line">char name[] &#x3D; &quot;findings&quot;;</span><br><span class="line">for (int i &#x3D; 0; name[i] !&#x3D; &#39;\0&#39;;i++) &#123;</span><br><span class="line">    char letterToCompare &#x3D; name[i];</span><br><span class="line">    int j &#x3D; i + 1;</span><br><span class="line">    for (j; name[j] !&#x3D; &#39;\0&#39;;j++) &#123;</span><br><span class="line">        if (letterToCompare &#x3D;&#x3D; name[j])</span><br><span class="line">        &#123;</span><br><span class="line">            isDup &#x3D; true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (isDup) &#123;</span><br><span class="line">    printf(&quot;字母重复&quot;);</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">    printf(&quot;字母不重复&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>哈希循环<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">bool isDup &#x3D; false;</span><br><span class="line">char name[] &#x3D; &quot;findings&quot;;</span><br><span class="line">int hash[26] &#x3D; &#123;&#125;;</span><br><span class="line"></span><br><span class="line">for (int i &#x3D; 0; name[i] !&#x3D; &#39;\0&#39;;i++) &#123;</span><br><span class="line">    printf(&quot;%d\n&quot;,name[i]-97);</span><br><span class="line">    hash[name[i] - 97]++;</span><br><span class="line">    printf(&quot;%d\n次&quot;, hash[name[i] - 97]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (int j &#x3D; 0; j&lt;26;j++) &#123;</span><br><span class="line">    if (hash[j]&gt;1) &#123;</span><br><span class="line">        printf(&quot;存在重复%d次的字符%c\n&quot;,hash[j], j + 97);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="比特处理找出相同字符"><a href="#比特处理找出相同字符" class="headerlink" title="比特处理找出相同字符"></a>比特处理找出相同字符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">long int bitX &#x3D; 0;</span><br><span class="line">long int bitH &#x3D; 0;</span><br><span class="line"></span><br><span class="line">char name[] &#x3D; &quot;findings&quot;;</span><br><span class="line"></span><br><span class="line">for (int i &#x3D; 0; name[i] !&#x3D; &#39;\0&#39;;i++) &#123;</span><br><span class="line">    int tmpx &#x3D; 1;</span><br><span class="line">    bitX &#x3D; (tmpx &lt;&lt; name[i] - 97);</span><br><span class="line">    if (bitX&amp;bitH &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;存在相同的元素%c&quot;,name[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        bitH &#x3D; bitX | bitH;</span><br><span class="line">        printf(&quot;bitX is %d , bitH is %d\n&quot;,bitX,bitH);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="打印字节流"><a href="#打印字节流" class="headerlink" title="打印字节流"></a>打印字节流</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; &quot;Please input a int !&#x3D;0:\n&quot;;</span><br><span class="line">        cin &gt;&gt; a;</span><br><span class="line">        if (a)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            for (int i &#x3D; 0; i &lt; 4; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                unsigned char *ch_p &#x3D; (unsigned char *)&amp;a + i;</span><br><span class="line">                unsigned char ch &#x3D; *ch_p;</span><br><span class="line">                for(int j&#x3D;0; j&lt;8; j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    if (ch &amp;(1 &lt;&lt; (7-j)))</span><br><span class="line">                    &#123;</span><br><span class="line">                        cout &lt;&lt; &quot;1&quot;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else</span><br><span class="line">                    &#123;</span><br><span class="line">                        cout &lt;&lt; &quot;0&quot;;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                cout &lt;&lt; &quot;  &quot;;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    while (a);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2021/01/12/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" data-id="ckjv6cod40015ekqbf1f9g7jn" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="cocos2d-xarpg-2D ARPG手游开发/cocos2d-xARPG 地图结构设计" class="article article-type-cocos2d-xarpg" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/27/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%20%E5%9C%B0%E5%9B%BE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="article-date">
-  <time datetime="2020-12-27T02:33:47.000Z" itemprop="datePublished">2020-12-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/27/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%20%E5%9C%B0%E5%9B%BE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">cocos2d-xARPG 地图结构设计</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="地图的需求"><a href="#地图的需求" class="headerlink" title="地图的需求"></a>地图的需求</h3><ul>
-<li>传奇地图默认格子大小默认60*40</li>
-<li>支持阻挡</li>
-<li>支持半透明</li>
-<li>支持地形分辨</li>
-<li>支持地形动画</li>
-<li>支持气候显示，粒子和动画</li>
-<li>支持地图分块</li>
-<li>支持分层，地形，通道，阻挡，弹道，区域，传送，对象，落脚，气候，地表,动画触发<br>需要编辑器和游戏两种实现。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2020/12/27/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%20%E5%9C%B0%E5%9B%BE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/" data-id="ckkjc0xwl0008f0qb1vyq674w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2D ARPG手游开发/cocos2d-xARPG人物动画问题笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/10/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E4%BA%BA%E7%89%A9%E5%8A%A8%E7%94%BB%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2020-09-10T09:22:25.000Z" itemprop="datePublished">2020-09-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/10/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E4%BA%BA%E7%89%A9%E5%8A%A8%E7%94%BB%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/">cocos2d-xARPG人物动画问题笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2020/09/10/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E4%BA%BA%E7%89%A9%E5%8A%A8%E7%94%BB%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/" data-id="ckkjc0xwh0001f0qbhy2g3chg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -584,7 +607,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -594,7 +617,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -604,7 +627,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 13.33px;">OPENGL</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 10px;">金融</a>
+      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
     </div>
   </div>
 
@@ -613,7 +636,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -626,23 +649,23 @@
       <ul>
         
           <li>
-            <a href="/2021/01/29/%E9%87%91%E8%9E%8D/2021%E5%B9%B41%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年1月日记</a>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/">pomelo1-pomelo简介</a>
           </li>
         
           <li>
-            <a href="/2021/01/29/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xarpg%20%E4%BD%8E%E7%AB%AF%E6%89%8B%E6%9C%BA%E5%B4%A9%E6%BA%83%E9%97%AE%E9%A2%98/">cocos2d-xarpg 低端手机崩溃问题</a>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/">pomelo3-Hellopomelo</a>
           </li>
         
           <li>
-            <a href="/2021/01/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/STL%E7%AE%80%E4%BB%8B/">STL简介</a>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo2-pomelo%E5%AE%89%E8%A3%85/">pomelo2-pomelo安装</a>
           </li>
         
           <li>
-            <a href="/2021/01/20/%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/">递归算法</a>
+            <a href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年2月日记</a>
           </li>
         
           <li>
-            <a href="/2021/01/20/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/">矩阵的基本算法</a>
+            <a href="/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">cg基础概念</a>
           </li>
         
       </ul>

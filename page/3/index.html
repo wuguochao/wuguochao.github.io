@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>-.-.--- -.. .   .-.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="just a programmer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="-.-.--- -.. .   .-.">
+<meta property="og:url" content="http://wuguochao.github.io/page/3/index.html">
+<meta property="og:site_name" content="-.-.--- -.. .   .-.">
+<meta property="og:description" content="just a programmer">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Wu GuoChao">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="-.-.--- -.. .   .-." type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">-.-.--- -.. .   .-.</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wuguochao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2D ARPG手游开发/cocos2d-xARPG前端技能系统设计" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/21/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="article-date">
+  <time datetime="2020-08-21T11:33:56.000Z" itemprop="datePublished">2020-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/21/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">cocos2d-xARPG前端技能系统设计</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>以下设计思路可以用于类传奇，也可以用于部分arpg</p>
+<h3 id="数据表的设计"><a href="#数据表的设计" class="headerlink" title="数据表的设计"></a>数据表的设计</h3><p>考虑到此种类型游戏技能比较复杂，一个技能可能分数种阶段（项目是6种）带数种特效，产生数种后继状态。技能和buf需要分开，两者的特效也要分开。初步设计为5张表处理技能。skillData处理技能数据skilleffect处理特效数据，一条skillData数据可以与薯条skilleffect信息关联。BufferData处理buffer，Buffereffect处理buf特效。一条skilldata可以与数条buf关联。</p>
+<ul>
+<li>skilldata</li>
+<li>skilleffect</li>
+<li>bufferdata</li>
+<li>buffereffect</li>
+</ul>
+<h3 id="资源的处理"><a href="#资源的处理" class="headerlink" title="资源的处理"></a>资源的处理</h3><p>原则如下：</p>
+<ul>
+<li>图像资源用10位数字分类区别类型2，id3，动作2，方向1和帧数，如有必要i可以增加位数</li>
+<li>单方向技能每个方向分开合图，8方向分为8个文件，需要时再加载</li>
+<li>多方向技能合并成一个文件，利于合批降低drawcall</li>
+<li>资源管理器设置技能资源子管理器，子管理器中分数个管道，分别处理不同资源。主角技能资源优先缓存，低等级常用公用资源缓存，其他角色技能资源换场景随即清理。</li>
+</ul>
+<h3 id="技能消息的处理"><a href="#技能消息的处理" class="headerlink" title="技能消息的处理"></a>技能消息的处理</h3><p>两种选择，接受消息后处理和发送消息处理。如果接受消息后处理，一旦网络延迟卡顿现象会比较严重；一般技能动画在发出消息时候同时播放，接受回包时候处理技能cd。血量和状态处理由额外的消息去做。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2020/08/21/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E5%89%8D%E7%AB%AF%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" data-id="ckkjc0xwm000bf0qbdn7oemqh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2D ARPG手游开发/cocos2d-xARPG项目趟坑笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/21/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E9%A1%B9%E7%9B%AE%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-08-21T11:32:10.000Z" itemprop="datePublished">2020-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/21/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E9%A1%B9%E7%9B%AE%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/">cocos2d-xARPG项目趟坑笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h2><ul>
+<li>资源问题，原资源自定义结构和格式需要替换成正常格式。</li>
+<li>地图无法使用，需要处理清流程</li>
+<li>人物资源同1，另外由逆时针改为顺时针</li>
+<li>drawcall 非常高，地图上召唤10个怪已经高达200，必须处理。</li>
+<li>游戏功能确实实现，但是代码混乱，没有按程序功能去管理，也没有按游戏功能分模块。是一个非常好的代码优化试验场。</li>
+</ul>
+<h2 id="自定义目录和默认资源目录的问题处理"><a href="#自定义目录和默认资源目录的问题处理" class="headerlink" title="自定义目录和默认资源目录的问题处理"></a>自定义目录和默认资源目录的问题处理</h2><ul>
+<li>现阶段目录规则过于繁琐，demo版本统一一个目录管理</li>
+<li>因为数据库文件需要root权限，数据库必须copy到可写目录然后才能读取</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2020/08/21/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%E9%A1%B9%E7%9B%AE%E8%B6%9F%E5%9D%91%E7%AC%94%E8%AE%B0/" data-id="ckkjc0xwn000ef0qbbly519bd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机语言/windows-bash指令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/windows-bash%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time datetime="2020-08-17T07:56:30.000Z" itemprop="datePublished">2020-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/windows-bash%E6%8C%87%E4%BB%A4/">windows bash指令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>背景：<br>项目需要自动批处理大量图片，windows bash唯一可选项。</p>
+<h3 id="变量设置"><a href="#变量设置" class="headerlink" title="变量设置"></a>变量设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off 消除盘符</span><br><span class="line">set &#x2F;a var &#x3D; 1+2</span><br><span class="line">echo %var%</span><br></pre></td></tr></table></figure>
+<h3 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;&gt; &gt;&gt;&quot;输出 &quot;&lt; &lt;&lt;&quot;输入 文件流的方向&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="多命令执行"><a href="#多命令执行" class="headerlink" title="多命令执行"></a>多命令执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp; 命令错误则不继续执行下一条命令</span><br><span class="line">|| 无视命令错误与否继续执行下一条命令</span><br></pre></td></tr></table></figure>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dir | find &quot;.txt&quot;</span><br><span class="line">netstat -an | find &quot;ESTABLISHED&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="net指令"><a href="#net指令" class="headerlink" title="net指令"></a>net指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">net &#x2F;? &#x2F;help 帮助</span><br><span class="line">net user 账户相关</span><br><span class="line">net user username pass &#x2F;add</span><br><span class="line">net user username &#x2F;delete</span><br></pre></td></tr></table></figure>
+<h3 id="打印可选参数"><a href="#打印可选参数" class="headerlink" title="打印可选参数"></a>打印可选参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo %1 %2</span><br><span class="line">xxx.bat param1 param2</span><br><span class="line">结果 param1 param2</span><br></pre></td></tr></table></figure>
+<h3 id="bash的注释"><a href="#bash的注释" class="headerlink" title="bash的注释"></a>bash的注释</h3><p>关键字 rem<br>使用方式 rem 内容</p>
+<h3 id="修改文字颜色和标题栏命令"><a href="#修改文字颜色和标题栏命令" class="headerlink" title="修改文字颜色和标题栏命令"></a>修改文字颜色和标题栏命令</h3><p>color 内容<br>title 内容</p>
+<h3 id="时间命令"><a href="#时间命令" class="headerlink" title="时间命令"></a>时间命令</h3><p>无参数会显示当前时间并提示修改新时间，/t只会显示当前时间<br>date 日期<br>time 时间</p>
+<h3 id="启动新窗口执行程序"><a href="#启动新窗口执行程序" class="headerlink" title="启动新窗口执行程序"></a>启动新窗口执行程序</h3><p>start</p>
+<h3 id="调用其它bat"><a href="#调用其它bat" class="headerlink" title="调用其它bat"></a>调用其它bat</h3><p>call bat文件的路径<br>注意 call 无法执行bat参数</p>
+<h3 id="查看进程列表tasklist"><a href="#查看进程列表tasklist" class="headerlink" title="查看进程列表tasklist"></a>查看进程列表tasklist</h3><p>tasklist /s 远程机器ip /u 用户名 /p 密码</p>
+<h3 id="终止进程taskkill"><a href="#终止进程taskkill" class="headerlink" title="终止进程taskkill"></a>终止进程taskkill</h3><p>taskkill /im cmd.exe<br>taskkill /pid pidnum /t 关闭pidnum 以及所有的子项</p>
+<h3 id="目录树指令-tree"><a href="#目录树指令-tree" class="headerlink" title="目录树指令 tree"></a>目录树指令 tree</h3><p>tree /a 不带扩展名<br>tree /f 带扩展名</p>
+<h3 id="关机指令"><a href="#关机指令" class="headerlink" title="关机指令"></a>关机指令</h3><p>shutdown /i 打开GUI界面处理远程关机<br>shutdown /s 关闭<br>shutdown /sg 关闭默认登陆上次登陆用户<br>shutdown /r 重启</p>
+<h3 id="at指令"><a href="#at指令" class="headerlink" title="at指令"></a>at指令</h3><p>现在已经改成schtasks指令</p>
+<h3 id="查看环境变量"><a href="#查看环境变量" class="headerlink" title="查看环境变量"></a>查看环境变量</h3><p>set<br>echo %变量% 打印变量</p>
+<h3 id="文件列表"><a href="#文件列表" class="headerlink" title="文件列表"></a>文件列表</h3><p>dir<br>dir /AH</p>
+<h3 id="创建移除文件夹"><a href="#创建移除文件夹" class="headerlink" title="创建移除文件夹"></a>创建移除文件夹</h3><p>mkdir 创建<br>rmdir 移除</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2020/08/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/windows-bash%E6%8C%87%E4%BB%A4/" data-id="ckkjc0xx3000uf0qbd1ltgc6f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/">pomelo1-pomelo简介</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/">pomelo3-Hellopomelo</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo2-pomelo%E5%AE%89%E8%A3%85/">pomelo2-pomelo安装</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年2月日记</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">cg基础概念</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Wu GuoChao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
