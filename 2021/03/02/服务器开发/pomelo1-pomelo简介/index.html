@@ -15,7 +15,7 @@
 <meta property="og:description" content="欢迎使用pomelo pomelo是一个游戏服务器框架，与以往单进程的游戏框架不同, 它是高性能、高可伸缩、分布式多进程的游戏服务器框架，并且使用很简单。它包括基础开发框架和一系列相关工具和库，可以帮助开发者省去游戏开发中枯燥的重复劳动和底层逻辑工作，免除开发者的重造轮子，让开发者可以更多地去关注游戏的具体逻辑，大大提高开发效率。pomelo强大的可伸缩性和灵活性使得pomelo也可以作为通用的分">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-02T13:18:54.000Z">
-<meta property="article:modified_time" content="2021-03-02T02:24:50.902Z">
+<meta property="article:modified_time" content="2021-03-02T03:53:23.226Z">
 <meta property="article:author" content="Wu GuoChao">
 <meta property="article:tag" content="pomelo">
 <meta name="twitter:card" content="summary">
@@ -109,6 +109,9 @@
 <p>pomelo的定位<br>pomelo是一个轻量级的服务器框架，它最适合的应用领域是网页游戏、社交游戏、移动游戏的服务端，开发者会发现pomelo可以用如此少的代码达到强大的扩展性和伸缩性。当然还不仅仅是游戏，用pomelo开发高实时web应用也如此合适， 而且伸缩性比其它框架好。</p>
 <p>不推荐将pomelo用于大型的MMORPG游戏开发，尤其是大型3D游戏， 还是需要象Bigworld这样的商用引擎来支撑。</p>
 <p>好了，是不是有迫不及待了，那就赶快安装pomelo来试试吧。</p>
+<h3 id="lordofpomelo-问题"><a href="#lordofpomelo-问题" class="headerlink" title="lordofpomelo 问题"></a>lordofpomelo 问题</h3><p>Pomelo版本2.2.5，官方demo之Treasures，下载源码后进入web-server目录，先输入命令 npm install -d 安装第三方模块，之后运行会报错，错误提示是：TypeError: mime.lookup is not a function，web-server\node_modules\connect\lib\middleware\static.js:144。原因是mime模块从2.x版本开始把lookup方法改为了getType，而作者编写时的mime模块是1.x版本。如果把lookup改为getType，虽能解决眼前这个错误，但接下来还会有其它地方报错，因为2.x版本不仅仅修改了这一个方法。更简单的解决办法是直接使用mime的1.x版本。方法有2种：</p>
+<p>1、在web-server目录下运行命令：npm install mime@^1；<br>2、打开web-server目录的package.json，在dependencies字段中增加一行：”mime”: “^1”，意思是安装mime的1.x版本。之后运行命令：npm install -d；</p>
+<p>第1种方法虽简单，但如果把源码clone到别处，问题会重复出现，所以推荐使用第2种方法，在package.json明确好版本，不管clone到哪，只要npm install -d就好了。</p>
 
       
     </div>
@@ -123,6 +126,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          linux/unix系统简介
+        
+      </div>
+    </a>
   
   
     <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo3-Hellopomelo/" id="article-nav-older" class="article-nav-link-wrap">
@@ -143,7 +155,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -153,7 +165,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -163,7 +175,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
+      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
     </div>
   </div>
 
@@ -172,7 +184,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -183,6 +195,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/">linux/unix系统简介</a>
+          </li>
         
           <li>
             <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/">pomelo1-pomelo简介</a>
@@ -198,10 +214,6 @@
         
           <li>
             <a href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年2月日记</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">cg基础概念</a>
           </li>
         
       </ul>

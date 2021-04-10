@@ -66,6 +66,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-算法/矩阵的基本算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/20/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" class="article-date">
+  <time datetime="2021-01-20T02:28:29.000Z" itemprop="datePublished">2021-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/20/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/">矩阵的基本算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="对角矩阵"><a href="#对角矩阵" class="headerlink" title="对角矩阵"></a>对角矩阵</h3><p>判定条件：if(i!=j) M[i,j] = 0;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[3,0,0,0,0],</span><br><span class="line">[0,7,0,0,0],</span><br><span class="line">[0,0,4,0,0],</span><br><span class="line">[0,0,0,9,0],</span><br><span class="line">[0,0,0,0,6]</span><br></pre></td></tr></table></figure>
+<p>存取的时候利用这个特点保存</p>
+<h3 id="三对角矩阵"><a href="#三对角矩阵" class="headerlink" title="三对角矩阵"></a>三对角矩阵</h3><p>判定条件: if((i &gt; j+1)&amp;&amp;(i&lt; j-1)) M[i,j] = 0;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[3,2,0,0,0],</span><br><span class="line">[5,7,3,0,0],</span><br><span class="line">[0,2,4,4,0],</span><br><span class="line">[0,0,1,9,5],</span><br><span class="line">[0,0,0,3,6]</span><br></pre></td></tr></table></figure>
+
+<h3 id="托普利兹矩阵（T矩阵）"><a href="#托普利兹矩阵（T矩阵）" class="headerlink" title="托普利兹矩阵（T矩阵）"></a>托普利兹矩阵（T矩阵）</h3><p>判定条件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[2 ,3,4,5,6],</span><br><span class="line">[7 ,2,3,4,5],</span><br><span class="line">[8 ,7,2,3,4],</span><br><span class="line">[9 ,8,7,2,3],</span><br><span class="line">[10,9,8,7,2],</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/01/20/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" data-id="ckk5740me0000gwqbgofj85vc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-图形/GLSL/GLSL基本概念" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/01/13/%E5%9B%BE%E5%BD%A2/GLSL/GLSL%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
@@ -629,50 +679,6 @@
 
 
   
-    <article id="post-2D ARPG手游开发/cocos2d-xARPG drawcall优化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/25/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/" class="article-date">
-  <time datetime="2020-08-25T08:52:42.000Z" itemprop="datePublished">2020-08-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/25/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/">cocos2d-xARPG drawcall优化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="当前阶段drawcall-分布"><a href="#当前阶段drawcall-分布" class="headerlink" title="当前阶段drawcall 分布"></a>当前阶段drawcall 分布</h3><p>地图 4-8 ，取6为基础数值<br>人物 9（+3）<br>加血条 13（+4）<br>头像框 19 （+6）<br>右下技能按键 38（+19）<br>左边任务 44 （+6）<br>功能按钮和小地图 60（+16）<br>血量法术量背包和自动按钮89（+29）<br>加10个怪 160（+70）</p>
-<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><p>地图</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2020/08/25/2D%20ARPG%E6%89%8B%E6%B8%B8%E5%BC%80%E5%8F%91/cocos2d-xARPG%20drawcall%E4%BC%98%E5%8C%96/" data-id="ckkjc0xwl0005f0qb89lh9x24" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -688,7 +694,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -698,7 +704,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -708,7 +714,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
+      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
     </div>
   </div>
 
@@ -717,7 +723,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -728,6 +734,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/">linux/unix系统简介</a>
+          </li>
         
           <li>
             <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/">pomelo1-pomelo简介</a>
@@ -743,10 +753,6 @@
         
           <li>
             <a href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年2月日记</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">cg基础概念</a>
           </li>
         
       </ul>

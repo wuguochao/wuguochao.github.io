@@ -66,6 +66,85 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-计算机语言/linux-unix系统简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" class="article-date">
+  <time datetime="2021-04-10T11:21:03.000Z" itemprop="datePublished">2021-04-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/">linux/unix系统简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="linux-unix系统介绍"><a href="#linux-unix系统介绍" class="headerlink" title="linux/unix系统介绍"></a>linux/unix系统介绍</h3><ul>
+<li>进程中的system相当于计算机的大脑。</li>
+<li>向下封装硬件，向上提供操作接口。</li>
+</ul>
+<h3 id="linux-unix版本和应用"><a href="#linux-unix版本和应用" class="headerlink" title="linux/unix版本和应用"></a>linux/unix版本和应用</h3><ul>
+<li>内核版本 kernel.org</li>
+<li>发行版本 ubuntu/centos/debian 等等</li>
+<li>应用领域 服务器 嵌入式 桌面 电子政务</li>
+</ul>
+<h3 id="操作热键"><a href="#操作热键" class="headerlink" title="操作热键"></a>操作热键</h3><p>打开终端：ctrl+alt+t<br>清屏：ctrl+l<br>在终端在退出锁定：ctrl+c</p>
+<h3 id="文件夹目录"><a href="#文件夹目录" class="headerlink" title="文件夹目录"></a>文件夹目录</h3><p>目录：又称为文件夹，是包含所有的文件<br>目录创建规则：<br>1、大小是256<br>2、不能包含特殊字符<br>3、见名知义<br>路径：是反应目录和文件的位置<br>linux 正斜杠 win dos 反斜杠</p>
+<p>[绝对位置]文件位置：windows：盘符：\文件夹\文件.avi<br>     linux: /home/主文件夹/0520/day01/a</p>
+<p>[相对位置]当前目录所在位置为 0520 ./day01/a<br>        day03 ../day01/a</p>
+<pre><code>.\c...\01jibi\biji.txt
+..\c...\01biji\biji.txt</code></pre>
+<p>文件：在计算机中一切皆文件<br>在windows中区分文件可以通过扩展名来区分 .exe .txt .ppt<br>在Linux中文件没有扩展名 可以通过颜色区分 也可以通过命令来区分 file 文件名</p>
+<p>在Linux中文件分为：<br>普通文件<br>目录文件<br>设备文件   字符设备文件 块设备文件<br>管道文件<br>链接文件</p>
+<h3 id="文件的权限"><a href="#文件的权限" class="headerlink" title="文件的权限"></a>文件的权限</h3><p>文件权限：<br>读【r】read<br>写【w】write<br>执行【x】execute</p>
+<p>d rwx rwx rwx 分为三组<br>d 目录 成为文件类型<br>第一组：文件的所属用户<br>第二组：文件的所属组<br>第三组：其他用户</p>
+<h3 id="命令格式个快捷提示"><a href="#命令格式个快捷提示" class="headerlink" title="命令格式个快捷提示"></a>命令格式个快捷提示</h3><p>Linux命令：<br>格式 ：命令 选项  参数 </p>
+<p>帮助：<br>命令 –help<br>man 命令</p>
+<p>快捷键：<br>tab 智能补全   如果没有重复的选项 自动补全 如果有重复项 按两下tab 显示列表<br>↑ ↓ 历史记录 查看之前敲过的命令 关闭后还会提示 但是同时打开两个终端 相互不会提示</p>
+<p>常用命令：<br>ls 【查看文件】<br>格式：<br>ls -a 查看所有文件包含隐藏文件<br>ls -l 以列表形式查看文件，不包含隐藏文件<br>ls -lh 以列表形式查看文件，不包含隐藏文件 ，按照1024倍数显示{KB MB GB}<br>ls -all以列表形式查看文件，包含隐藏文件 快捷方式【ll】</p>
+<p>通配符：<br>【<em>】 匹配任意多个字符【0-256】  a</em>  一个以上字符 256一下<br>【?】 匹配任意一个字符  a？ 两个字符<br>【[a-z]】 区间法 匹配a到z的所有字符 只能确定一个字符<br>【[abcde]】 穷举法 权值法 匹配abcde的所有字符 只能确定一个字符</p>
+<p>切换工作目录：<br>cd 【切换工作目录】cd 目录<br>格式：<br>cd 切换到用户主目录<br>cd ~ 切换到当前用户的主目录<br>cd .. 切换到上级目录<br>cd .  切换到当前目录<br>cd -  切换到上一次目录</p>
+<p>创建目录：<br>mkdir 目录名 -p 递归创建<br>rmdir 目录名  目录一定是空的<br>rm 文件  -i询问 -r 递归传出</p>
+<p>链接：<br>格式：<br>ln 源文件 链接文件 硬链接<br>ln -s 源文件 链接文件 软连接<br>硬链接文件占磁盘空间 但是删除源文件不会影响硬链接文件<br>软链接文件不占磁盘空间 但是删除源文件会影响软链接文件</p>
+<p>硬链接和拷贝（复制）区别 无论你修改了哪一个链接之后的文件 两个文件都会改变 保持一致  但是拷贝不会<br>1、改变软链接文件就是相当于间接的改变了源文件<br>2、查看文件时默认链接数为1 如果有链接一次递增<br>3、如果创建的软链接文件和源文件在不同的目录下，需要使用绝对路径</p>
+<p>文本搜索：<br>grep  ‘搜索内容’ 文件名<br>-n 显示行号<br>-v 反选<br>-i 忽略大小写</p>
+<p>通配符：<br>【^a】以a为起始的字符搜索文件<br>【a$】以a为结尾的字符搜索文件<br>【.】 配匹任意一个非换行的字符<br>【*】匹配任意字符（大于0的整数）</p>
+<p>文件搜索：<br>find 目录 参数 文件名（可以使用通配符）<br>-name 文件名<br>-size 大小<br>-perm rwx</p>
+<p>归档：<br>tar -cvf 归档文件名.tar 文件1 文件2  目录1 目录2<br>解归档：<br>tar -xvf 归档文件名.tar  -C 路径</p>
+<p>压缩：<br>gzip 归档文件名.tar  生成了一个文件 归档文件名.tar.gz 文件大小小于归档文件大小 归档文件名.tar不存在了<br>解压缩：<br>gzip -d 归档文件名.tar.gz 生成了一个文件 归档文件名.tar</p>
+<p>一步归档压缩：<br>tar -czvf 文件名.tar.gz 文件1 文件2 目录1 目录2</p>
+<p>一步解归档压缩：<br>tar -xzvf 文件名.tar.gz -C 路径</p>
+<p>bzip2压缩：<br>tar -cjvf 文件名.tar.bz2 文件1 文件2 目录1 目录2<br>bzip2解压缩：<br>tar -xjvf 文件名.tar.bz2 -C 路径</p>
+<p>zip压缩：<br>zip 文件名 文件1 文件2 目录1 目录2  生成一个文件为：文件名.zip<br>unzip解压缩：<br>unzip 文件名.zip -C 路径</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" data-id="cknbhcwmc0000ckqb04wd7q1c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/" rel="tag">c/c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-服务器开发/pomelo1-pomelo简介" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/" class="article-date">
@@ -108,6 +187,9 @@
 <p>pomelo的定位<br>pomelo是一个轻量级的服务器框架，它最适合的应用领域是网页游戏、社交游戏、移动游戏的服务端，开发者会发现pomelo可以用如此少的代码达到强大的扩展性和伸缩性。当然还不仅仅是游戏，用pomelo开发高实时web应用也如此合适， 而且伸缩性比其它框架好。</p>
 <p>不推荐将pomelo用于大型的MMORPG游戏开发，尤其是大型3D游戏， 还是需要象Bigworld这样的商用引擎来支撑。</p>
 <p>好了，是不是有迫不及待了，那就赶快安装pomelo来试试吧。</p>
+<h3 id="lordofpomelo-问题"><a href="#lordofpomelo-问题" class="headerlink" title="lordofpomelo 问题"></a>lordofpomelo 问题</h3><p>Pomelo版本2.2.5，官方demo之Treasures，下载源码后进入web-server目录，先输入命令 npm install -d 安装第三方模块，之后运行会报错，错误提示是：TypeError: mime.lookup is not a function，web-server\node_modules\connect\lib\middleware\static.js:144。原因是mime模块从2.x版本开始把lookup方法改为了getType，而作者编写时的mime模块是1.x版本。如果把lookup改为getType，虽能解决眼前这个错误，但接下来还会有其它地方报错，因为2.x版本不仅仅修改了这一个方法。更简单的解决办法是直接使用mime的1.x版本。方法有2种：</p>
+<p>1、在web-server目录下运行命令：npm install mime@^1；<br>2、打开web-server目录的package.json，在dependencies字段中增加一行：”mime”: “^1”，意思是安装mime的1.x版本。之后运行命令：npm install -d；</p>
+<p>第1种方法虽简单，但如果把源码clone到别处，问题会重复出现，所以推荐使用第2种方法，在package.json明确好版本，不管clone到哪，只要npm install -d就好了。</p>
 
       
     </div>
@@ -424,7 +506,7 @@
 <li>资源：资源下载，下载队列的暂停，再开，插入，位置移动操作。 dc: 头部hub处理</li>
 <li>资源：加载和下载 再细分优化，必要时采用LOD策略，内存内八方向变为四方向，一组动作资源拆分为两组，减少内存负载。 DC：主界面优化，尽量降低指标给人物素材让路.</li>
 <li>资源：准备一组删减版待机动作，渲染高压力时候，切换为删减版图 dc：怪物优化</li>
-<li>略…</li>
+<li>人物：60人以下不做任何处理，60人以上时候以主角为半径分动作做抽帧处理。</li>
 </ol>
 
       
@@ -542,56 +624,6 @@
 
 
   
-    <article id="post-算法/矩阵的基本算法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" class="article-date">
-  <time datetime="2021-01-20T02:28:29.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/20/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/">矩阵的基本算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="对角矩阵"><a href="#对角矩阵" class="headerlink" title="对角矩阵"></a>对角矩阵</h3><p>判定条件：if(i!=j) M[i,j] = 0;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[3,0,0,0,0],</span><br><span class="line">[0,7,0,0,0],</span><br><span class="line">[0,0,4,0,0],</span><br><span class="line">[0,0,0,9,0],</span><br><span class="line">[0,0,0,0,6]</span><br></pre></td></tr></table></figure>
-<p>存取的时候利用这个特点保存</p>
-<h3 id="三对角矩阵"><a href="#三对角矩阵" class="headerlink" title="三对角矩阵"></a>三对角矩阵</h3><p>判定条件: if((i &gt; j+1)&amp;&amp;(i&lt; j-1)) M[i,j] = 0;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[3,2,0,0,0],</span><br><span class="line">[5,7,3,0,0],</span><br><span class="line">[0,2,4,4,0],</span><br><span class="line">[0,0,1,9,5],</span><br><span class="line">[0,0,0,3,6]</span><br></pre></td></tr></table></figure>
-
-<h3 id="托普利兹矩阵（T矩阵）"><a href="#托普利兹矩阵（T矩阵）" class="headerlink" title="托普利兹矩阵（T矩阵）"></a>托普利兹矩阵（T矩阵）</h3><p>判定条件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[2 ,3,4,5,6],</span><br><span class="line">[7 ,2,3,4,5],</span><br><span class="line">[8 ,7,2,3,4],</span><br><span class="line">[9 ,8,7,2,3],</span><br><span class="line">[10,9,8,7,2],</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2021/01/20/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" data-id="ckk5740me0000gwqbgofj85vc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -607,7 +639,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -617,7 +649,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -627,7 +659,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
+      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
     </div>
   </div>
 
@@ -636,7 +668,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -647,6 +679,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/">linux/unix系统简介</a>
+          </li>
         
           <li>
             <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo1-pomelo%E7%AE%80%E4%BB%8B/">pomelo1-pomelo简介</a>
@@ -662,10 +698,6 @@
         
           <li>
             <a href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年2月日记</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/02/%E5%9B%BE%E5%BD%A2/CG/cg%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">cg基础概念</a>
           </li>
         
       </ul>
