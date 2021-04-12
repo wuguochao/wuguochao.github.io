@@ -66,6 +66,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-计算机语言/linux简单服务器搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/04/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux%E7%AE%80%E5%8D%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" class="article-date">
+  <time datetime="2021-04-12T07:49:53.000Z" itemprop="datePublished">2021-04-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux%E7%AE%80%E5%8D%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">linux简单服务器搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="权限操作"><a href="#权限操作" class="headerlink" title="权限操作"></a>权限操作</h3><p>whoami 查看当前用户<br>cat /etc/passwd<br>用户权限：<br>su 切换用户账户<br>格式：<br>【su 用户名 】<br>【su】 切换到root<br>【su root】 切换到root<br>【su -】 切换到root用户 同时切换到root目录</p>
+<p>添加组：<br>【groupadd 组名】  添加组  需要用户权限<br>删除组<br>【groupdel 组名】  删除组  需要用户权限和清空组成员<br>修改用户所在组：<br>【usermod -g 组名 用户名1 用户名2】需要用户权限</p>
+<p>添加用户：<br>【useradd -d /home/目录 用户名 -g 组名 -m】新建用户 设置用户主目录和设置组名 并自动创建  需要用户权限</p>
+<p>设置密码：<br>【passwd 用户名】设置密码 需要用户权限</p>
+<p>删除用户：<br>【userdel -r 用户名】 删除用户递归删除该用户所有文件 需要用户权限</p>
+<p>修改文件权限：<br>字符法格式：【chmod -u|g|o|a +|- rwc 文件1 文件2】<br>d rwx r-x r-x<br>u user +|- rwx<br>g group +|- rwx<br>o other +|- rwx<br>a all +|- rwx<br>chmod u + x<br>数字法格式：<br> r w x<br> 0 0 0  —  0<br> 0 0 1  –x  1<br> 0 1 0  -w-  2<br> 0 1 1  -wx  3<br> 1 0 0  r–  4<br> 1 0 1  r-x  5<br> 1 1 0  rw-  6<br> 1 1 1  rwx  7</p>
+<p>【chmod 372 文件名1 文件名2】</p>
+<p>rwx rwx rwx<br>421 421 421</p>
+<p>rw- r-x r–</p>
+<p>-wx rwx -w-</p>
+<p>r——–</p>
+<p>rw- rw- r–<br>chmod 6 6 4  a.txt</p>
+<p>修改文件所有者：<br>【chown 用户名 文件1 文件2 目录1 目录2】需要用户权限<br>修改文件组：<br>【chgrp 组名 文件1 文件2 目录1 目录2】需要用户权限</p>
+<p>编辑器：<br>VI编辑器有两个模式：文本编辑模式 命令行处理模式<br>进入编辑器：<br>1、vi 文件名  2、vim<br>操作编辑器：<br>【i】在光标当前位置插入<br>【a】在光标右侧位置插入<br>【o】在光标下一行位置开启新的一行插入<br>【O】在光标上一行位置开启新的一行插入<br>【I】在光标当前行行首插入<br>【A】在光标当前行行尾插入</p>
+<p>退出编辑器：<br>【ZZ】保存退出<br>【:wq】保存退出<br>【:x】保存退出<br>【:w 文件名】保存到指定文件中<br>【:q】 保存退出 针对未修改的文件 注意：未保存文件会提示 无法退出<br>【:q!】 强制退出  退出 不保存<br>【:! 命令】暂时离开vi 执行其他命令</p>
+<p>案例：<br>打开vi  源文件.c<br>进入插入模式<br>#include &lt;stdio.h&gt;</p>
+<p>int main(void)<br>{<br>    printf(“hello world!\n”);<br>    return 0;<br>}<br>退出保存</p>
+<p>编译程序<br>gcc -o 可执行程序  源文件.c</p>
+<p>./可执行程序</p>
+<p>编辑器操作：<br>【[n]x】删除光标位置后面n个字符<br>【[n]X】删除光标位置前面n个字符<br>【D】删除光标所在位置后面到行尾的所有字符<br>【[n]dd】删除光标所在行及下面n行   剪切<br>【p】在光标下一行粘贴<br>【[n]yy】复制光标所在行及下面n行<br>【dG】删除光标所在行到文件结尾<br>【J】合并光标所在行和下一行 中间用空格连接<br>【.】执行上一次命令行操作<br>【u】撤销</p>
+<p>编辑器定位：<br>【ctrl+b】回滚 行号减小<br>【ctrl+f】前滚 行号增加<br>【gg】定位在文件第一行行首<br>【G】定位在文件最后一行行首<br>【:$】定位在文件最后一行行首<br>【[n]G | [n]gg】定位在m行<br>注意：在查找一些特殊含义的字符时，需要加上转义字符<br>【/内容】查找<br>【n】查找下一个<br>【N】查找上一个<br>【?】查找上一次的所搜内容<br>【/^word】 查找以word开头的内容<br>【/word$】 查找以word结尾的内容<br>【/.】查找任意一个字符<br>【/*】查找任意多个字符</p>
+<p>编辑器替换：<br>【r】替换光标所在位置的字符<br>【:r 文件名】在光标当前行的下一行插入一个文件 每次添加只能添加一个文件<br>【:s/a/b/g】将光标所在行的a替换为b<br>【:g/a/s//b/g】将文件中所有a替换为b<br>【:n1,n2s/a/b/g】将行区间n1到n2的行中所有的a替换为b</p>
+<p>编辑器设置：<br>【:set ic】搜索时不区分大小写<br>【:set noic】搜索时区分大小写</p>
+<p>远程连接服务器：<br>linux设置：<br>1、右击网络设置，在打开对话框中选择网络适配器<br>2、在网络连接中选择网络桥接模式并选择复制物理网络地址<br>3、重启linux服务器<br>4、获取ip地址【ifconfig】<br>windows设置：<br>1、安装中文版Xshell5<br>2、打开XShell选择文件，在下拉列表中选择新建<br>3、在弹出对话框中设置用户名和ip地址<br>4、验证身份需要输入linux服务器的用户名和密码</p>
+<p>远程文件传输：<br>1、在窗口菜单中选择新建文件传输<br>2、在打开sftp对话框中设置路径linux路径 同时设置windows路径 命令时lcd 在打开对话框中设置路径<br>3、文件传输 put上传 将windows中的文件上传到Linux服务器中 get 下载将Linux中的文件下载到windows中</p>
+<p>linux服务器搭建：<br>1、上传文件 http.tar.gz<br>2、解压文件 tar -xzvf http.tar.gz 解压完成之后生成一个目录http<br>3、进入http目录 编译程序，sudo make<br>4、启动服务器 sudo ./myhttp start stop<br>5、ifconfig获取Linux服务器地址</p>
+<p>手写C语言版网页：<br>1、进入http目录<br>2、新建一个文件名为XXX.c<br>3、gcc -o XXX.cgi XXX.c<br>4、重启服务器</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wuguochao.github.io/2021/04/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux%E7%AE%80%E5%8D%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" data-id="ckneazgtj0000lwqb3z527qit" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/" rel="tag">c/c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-计算机语言/linux-unix系统简介" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" class="article-date">
@@ -116,17 +185,20 @@
 <p>快捷键：<br>tab 智能补全   如果没有重复的选项 自动补全 如果有重复项 按两下tab 显示列表<br>↑ ↓ 历史记录 查看之前敲过的命令 关闭后还会提示 但是同时打开两个终端 相互不会提示</p>
 <p>常用命令：<br>ls 【查看文件】<br>格式：<br>ls -a 查看所有文件包含隐藏文件<br>ls -l 以列表形式查看文件，不包含隐藏文件<br>ls -lh 以列表形式查看文件，不包含隐藏文件 ，按照1024倍数显示{KB MB GB}<br>ls -all以列表形式查看文件，包含隐藏文件 快捷方式【ll】</p>
 <p>通配符：<br>【<em>】 匹配任意多个字符【0-256】  a</em>  一个以上字符 256一下<br>【?】 匹配任意一个字符  a？ 两个字符<br>【[a-z]】 区间法 匹配a到z的所有字符 只能确定一个字符<br>【[abcde]】 穷举法 权值法 匹配abcde的所有字符 只能确定一个字符</p>
-<p>切换工作目录：<br>cd 【切换工作目录】cd 目录<br>格式：<br>cd 切换到用户主目录<br>cd ~ 切换到当前用户的主目录<br>cd .. 切换到上级目录<br>cd .  切换到当前目录<br>cd -  切换到上一次目录</p>
+<h3 id="工作目录操作"><a href="#工作目录操作" class="headerlink" title="工作目录操作"></a>工作目录操作</h3><p>切换工作目录：<br>cd 【切换工作目录】cd 目录<br>格式：<br>cd 切换到用户主目录<br>cd ~ 切换到当前用户的主目录<br>cd .. 切换到上级目录<br>cd .  切换到当前目录<br>cd -  切换到上一次目录</p>
 <p>创建目录：<br>mkdir 目录名 -p 递归创建<br>rmdir 目录名  目录一定是空的<br>rm 文件  -i询问 -r 递归传出</p>
-<p>链接：<br>格式：<br>ln 源文件 链接文件 硬链接<br>ln -s 源文件 链接文件 软连接<br>硬链接文件占磁盘空间 但是删除源文件不会影响硬链接文件<br>软链接文件不占磁盘空间 但是删除源文件会影响软链接文件</p>
+<h3 id="文件的两种链接方式"><a href="#文件的两种链接方式" class="headerlink" title="文件的两种链接方式"></a>文件的两种链接方式</h3><p>链接：<br>格式：<br>ln 源文件 链接文件 硬链接<br>ln -s 源文件 链接文件 软连接<br>硬链接文件占磁盘空间 但是删除源文件不会影响硬链接文件<br>软链接文件不占磁盘空间 但是删除源文件会影响软链接文件</p>
 <p>硬链接和拷贝（复制）区别 无论你修改了哪一个链接之后的文件 两个文件都会改变 保持一致  但是拷贝不会<br>1、改变软链接文件就是相当于间接的改变了源文件<br>2、查看文件时默认链接数为1 如果有链接一次递增<br>3、如果创建的软链接文件和源文件在不同的目录下，需要使用绝对路径</p>
+<h3 id="文本的处理"><a href="#文本的处理" class="headerlink" title="文本的处理"></a>文本的处理</h3><p>文本查看：<br>cat 1.txt 2.txt &gt; 3.txt</p>
 <p>文本搜索：<br>grep  ‘搜索内容’ 文件名<br>-n 显示行号<br>-v 反选<br>-i 忽略大小写</p>
 <p>通配符：<br>【^a】以a为起始的字符搜索文件<br>【a$】以a为结尾的字符搜索文件<br>【.】 配匹任意一个非换行的字符<br>【*】匹配任意字符（大于0的整数）</p>
+<h3 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h3><p>计算文件中文字数量 wc<br> -l line<br> -w word<br> -c byte count</p>
 <p>文件搜索：<br>find 目录 参数 文件名（可以使用通配符）<br>-name 文件名<br>-size 大小<br>-perm rwx</p>
+<h3 id="拷贝和移动"><a href="#拷贝和移动" class="headerlink" title="拷贝和移动"></a>拷贝和移动</h3><p>cp<br>mv<br>file<br>-f -i -v</p>
 <p>归档：<br>tar -cvf 归档文件名.tar 文件1 文件2  目录1 目录2<br>解归档：<br>tar -xvf 归档文件名.tar  -C 路径</p>
-<p>压缩：<br>gzip 归档文件名.tar  生成了一个文件 归档文件名.tar.gz 文件大小小于归档文件大小 归档文件名.tar不存在了<br>解压缩：<br>gzip -d 归档文件名.tar.gz 生成了一个文件 归档文件名.tar</p>
-<p>一步归档压缩：<br>tar -czvf 文件名.tar.gz 文件1 文件2 目录1 目录2</p>
-<p>一步解归档压缩：<br>tar -xzvf 文件名.tar.gz -C 路径</p>
+<h3 id="归档压缩"><a href="#归档压缩" class="headerlink" title="归档压缩"></a>归档压缩</h3><p>压缩：<br>gzip 归档文件名.tar  生成了一个文件 归档文件名.tar.gz 文件大小小于归档文件大小 归档文件名.tar不存在了<br>解压缩：<br>gzip -d 归档文件名.tar.gz 生成了一个文件 归档文件名.tar</p>
+<p>一步归档压缩：<br>tar -czvf 文件名.tar.gz 文件1 文件2 目录1 目录2 （c是create的意思）</p>
+<p>一步解归档压缩：<br>tar -xzvf 文件名.tar.gz -C 路径 (x是解压缩的意思)</p>
 <p>bzip2压缩：<br>tar -cjvf 文件名.tar.bz2 文件1 文件2 目录1 目录2<br>bzip2解压缩：<br>tar -xjvf 文件名.tar.bz2 -C 路径</p>
 <p>zip压缩：<br>zip 文件名 文件1 文件2 目录1 目录2  生成一个文件为：文件名.zip<br>unzip解压缩：<br>unzip 文件名.zip -C 路径</p>
 
@@ -577,53 +649,6 @@
 
 
   
-    <article id="post-算法/递归算法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/" class="article-date">
-  <time datetime="2021-01-20T03:08:17.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/20/%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/">递归算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基本递归"><a href="#基本递归" class="headerlink" title="基本递归"></a>基本递归</h3><ul>
-<li>在递归前调用打印和递归后调用打印结果相反</li>
-<li>int targetId = pRoomId - 1; 不可以直接改变pRoomId 直接写成 pRoomId = pRoomId - 1;是错误的，结果会变得10-1，0-9<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void comeIntoRoom(int pRoomId) &#123;</span><br><span class="line">    if (pRoomId &gt; 0) &#123;</span><br><span class="line">        printf(&quot;进入了%d号房间。\n&quot;, pRoomId);</span><br><span class="line">        &#x2F;&#x2F;递归表达式代码块</span><br><span class="line">        int targetId &#x3D; pRoomId - 1;</span><br><span class="line">        comeIntoRoom(targetId);</span><br><span class="line">        &#x2F;&#x2F;printf(&quot;进入了%d号房间。\n&quot;, pRoomId);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wuguochao.github.io/2021/01/20/%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/" data-id="ckk5740ms0003gwqb8bnyar2c" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -639,7 +664,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -649,7 +674,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c/c++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E5%9F%BA%E7%A1%80/" rel="tag">C++基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OPENGL/" rel="tag">OPENGL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c/c++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" rel="tag">cocos2d-x apk出包</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pc%E9%80%86%E5%90%91/" rel="tag">pc逆向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/" rel="tag">pomelo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-bash/" rel="tag">windows bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%A5%87/" rel="tag">传奇</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E8%9E%8D/" rel="tag">金融</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -659,7 +684,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
+      <a href="/tags/C-%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C++基础</a> <a href="/tags/OPENGL/" style="font-size: 16.67px;">OPENGL</a> <a href="/tags/c-c/" style="font-size: 13.33px;">c/c++</a> <a href="/tags/cocos2d-x-apk%E5%87%BA%E5%8C%85/" style="font-size: 13.33px;">cocos2d-x apk出包</a> <a href="/tags/pc%E9%80%86%E5%90%91/" style="font-size: 10px;">pc逆向</a> <a href="/tags/pomelo/" style="font-size: 16.67px;">pomelo</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/windows-bash/" style="font-size: 10px;">windows bash</a> <a href="/tags/%E4%BC%A0%E5%A5%87/" style="font-size: 20px;">传奇</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.67px;">算法</a> <a href="/tags/%E9%87%91%E8%9E%8D/" style="font-size: 13.33px;">金融</a>
     </div>
   </div>
 
@@ -668,7 +693,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -679,6 +704,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux%E7%AE%80%E5%8D%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">linux简单服务器搭建</a>
+          </li>
         
           <li>
             <a href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/linux-unix%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/">linux/unix系统简介</a>
@@ -694,10 +723,6 @@
         
           <li>
             <a href="/2021/03/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/pomelo2-pomelo%E5%AE%89%E8%A3%85/">pomelo2-pomelo安装</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/28/%E9%87%91%E8%9E%8D/2021%E5%B9%B42%E6%9C%88%E6%97%A5%E8%AE%B0/">2021年2月日记</a>
           </li>
         
       </ul>
